@@ -1,0 +1,324 @@
+.sobreMim{
+    width: 100vw;
+    height: auto;
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+
+}
+
+.containerTitleSobreMim{
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+
+}
+.containerTitleSobreMim > h1{
+
+    font-size: 50px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgb(255, 255, 255);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.sobrMimTexto{
+    width: 80%;
+    height: auto;
+
+    margin: 20px;
+
+    border: 2px solid #ffffff7e;
+    padding: 20px;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+.sobrMimTexto > h2{
+    color: #ffffff7e;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.containerIcon{
+    width: 80%;
+    height: 60%;
+}
+.icons{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.icon{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #ffffff7e;
+    background-color: #18181b;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s all ;
+}
+.icon:hover{
+    border: 2px solid #9849ff;
+}
+.iconHtml{
+    /* display: none; */
+}
+.iconHtml:hover .toolTip, .iconCss:hover .toolTip,
+.iconJs:hover .toolTip, .iconFigma:hover .toolTip,
+.iconPy:hover .toolTip, .iconDb:hover .toolTip{
+    display: flex;
+}
+
+
+.icone{
+    font-size: 50px;
+    color: #9849ff;
+    cursor: pointer;
+}
+
+.toolTip{
+    color: #9849ff;
+    position: absolute;
+    margin-top: 100px;
+    font-size: 20px;
+    font-weight: 900;
+    display: none;
+    transition: 2s all ease-in;
+}
+
+
+.containerDemoProjetos {
+    border: 2px solid #ffffff7e; 
+    height: 300px;
+    padding: 20px;
+
+    
+    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    margin-top: 70px;
+}
+
+.containerFotosHtml,
+.containerFotosCss,
+.containerFotosJS {
+    display: none; 
+}
+
+.iconHtml:hover ~ .containerDemoProjetos .containerFotosHtml,
+.iconCss:hover ~ .containerDemoProjetos .containerFotosCss,
+.iconJs:hover ~ .containerDemoProjetos .containerFotosJS {
+    display: flex; 
+}
+
+.containerDemoProjetos > div {
+    display: none;
+}
+
+.iconHtml:hover ~ .containerDemoProjetos .containerFotosHtml,
+.iconCss:hover ~ .containerDemoProjetos .containerFotosCss,
+.iconJs:hover ~ .containerDemoProjetos .containerFotosJS {
+    display: flex; 
+}
+
+.projetosImg {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #ffffff7e;
+    margin: 10px; 
+}
+
+.containerDemoProjetos::after{
+    content: 'Passe o mouse nos icones acima';
+    color: #ffffff7e;    
+    font-size: 15px;
+}
+
+
+
+@media (min-width: 0px) and (max-width: 320px) {
+    #sobreMim{
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .sobrMimTexto{
+        overflow-x: scroll;
+        height: 300px; 
+        width: 95%;
+
+        text-align: left;
+
+        display: block;
+    }
+    .sobrMimTexto h2{
+        text-align: left;
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        font-size: 20px;
+    }
+    .containerIcon{
+        width: 95%;
+    }
+    .icon{
+        margin: 10px 10px 0px 0;
+    }
+    .containerDemoProjetos {
+        display: none;
+    }
+    .projetosImg {
+        display: none;
+    }
+    .toolTip{
+        display: none;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+    #sobreMim{
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .sobrMimTexto{
+        overflow-x: scroll;
+        height: 400px; 
+        width: 95%;
+        /* border: 2px solid #ffffff7e;
+        padding: 20px; */
+        text-align: left;
+
+        display: block;
+    }
+    .sobrMimTexto h2{
+        text-align: left;
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        font-size: 20px;
+    }
+    .containerDemoProjetos {
+        display: none;
+    }
+    .containerIcon{
+        width: 95%;
+    }
+    .icon{
+        margin: 10px 10px 0px 0;
+    }
+    .projetosImg {
+        display: none;
+    }
+    .toolTip{
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 481px) and (max-width: 600px) {
+    #sobreMim{
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .sobrMimTexto{
+        overflow-x: scroll;
+        height: 300px; 
+        width: 95%;
+        /* border: 2px solid #ffffff7e;
+        padding: 20px; */
+        text-align: left;
+
+        display: block;
+    }
+    .sobrMimTexto{
+        overflow-x: scroll;
+        height: 40%; 
+        width: 95%;
+        /* border: 2px solid #ffffff7e;
+        padding: 20px; */
+        text-align: left;
+
+        display: block;
+    }
+    .sobrMimTexto h2{
+        text-align: left;
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        font-size: 20px;
+    }
+    .containerIcon{
+        width: 95%;
+    }
+    .icon{
+        margin: 10px 10px 0px 0;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1250px){
+    #sobreMim{
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .sobrMimTexto{
+        overflow-x: scroll;
+        height: 400px; 
+        width: 95%;
+        /* border: 2px solid #ffffff7e;
+        padding: 20px; */
+        text-align: left;
+
+        display: block;
+    }
+    .sobrMimTexto{
+        overflow-x: scroll;
+        height: 40%; 
+        width: 95%;
+        /* border: 2px solid #ffffff7e;
+        padding: 20px; */
+        text-align: left;
+
+        display: block;
+    }
+    .sobrMimTexto h2{
+        text-align: left;
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        font-size: 20px;
+    }
+    .containerIcon{
+        width: 95%;
+    }
+    .icon{
+        margin: 10px 10px 0px 0;
+    }
+}
