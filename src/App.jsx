@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 
 function App() {
   useEffect(() => {
-    AOS.init();  // só inicializa com configurações padrão
+    AOS.init(); 
   }, []);
 
   return (
