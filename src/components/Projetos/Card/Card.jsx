@@ -30,13 +30,7 @@ function Card(props) {
               <h3>{props.desc2Projeto}</h3>
             </div>
 
-            <a href={props.gitHubProjeto} target="_blank" rel="noopener noreferrer">
-              <div className="iconProjeto">
-                <div className="boxIcon boxGithub">
-                  <i className="fa-brands fa-github iconDescConhecimento"></i>
-                </div>
-              </div>
-            </a>
+
           </div>
         </div>
       </div>

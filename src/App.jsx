@@ -5,7 +5,7 @@ import Stars from './components/Stars/Stars'
 import Home from './components/Home/Home'
 import SobreMim from './components/SobreMim/SobreMim'
 import Parallax from './components/Parallax/Parallax'
-import Cursos from './components/Cursos/Cursos'
+import Curriculo from './components/Curriculo/Curriculo'
 import Projeto from './components/Projetos/Projetos'
 
 
@@ -24,7 +24,7 @@ function App() {
       <Home />
       <SobreMim />
       <Parallax />
-      <Cursos />
+      <Curriculo />
       <Projeto />
     </div>
   );

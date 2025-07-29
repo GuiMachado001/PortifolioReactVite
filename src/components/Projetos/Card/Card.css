@@ -134,6 +134,7 @@
     border-radius: 5px;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .containerDescBack{
     width: 100%;
@@ -154,6 +155,13 @@
 }
 .nameProjeto > h1, h3{
     margin-left: 10px;
+}
+.nameProjeto > h3{
+  margin-top: 15px;
+}
+.nameProjeto > h1{
+  color: #9849ff;
+  font-size: 20px;
 }
 .containerCards{
     display: flex;
