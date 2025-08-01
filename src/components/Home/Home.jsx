@@ -34,10 +34,10 @@ function Home() {
         >
           <div className="header-right">
             <div className="circle">
-              <a href="#" className="icon iconCss"><img src="Assets/Icons/linguagens/css.svg" alt="" /></a>
-              <a href="#" className="icon iconJs"><img src="Assets/Icons/linguagens/js.svg" alt="" /></a>
-              <a href="#" className="icon iconHtml"><img src="Assets/Icons/linguagens/Html.svg" alt="" /></a>
-              <a href="#" className="icon iconPth"><img src="Assets/Icons/linguagens/pth.svg" alt="" /></a>
+              <a href="#" className="icon iconCss"><img src="" alt="" /></a>
+              <a href="#" className="icon iconJs"><img src="" alt="" /></a>
+              <a href="#" className="icon iconHtml"><img src="" alt="" /></a>
+              <a href="#" className="icon iconPth"><img src="" alt="" /></a>
             </div>
             <div className="developer-img">
               <div className="dev-img-wrapper">
