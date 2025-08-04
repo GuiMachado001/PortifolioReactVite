@@ -47,22 +47,6 @@ function SobreMim(){
                 </div>
             </div>
         
-            <div className="containerDemoProjetos">
-
-                <div className="containerFotosHtml">
-                    <img className="projetosImg" src="../../../public/img/projetos/Pojeto Netflix.png" alt="Projeto Netflix" />
-                    <img className="projetosImg" src="../../../public/img/projetos/Projeto GodOfWar.png" alt="Projeto God Of War" /> 
-                </div>
-                
-                <div className="containerFotosCss">
-                    <img className="projetosImg" src="../../../public/img/projetos/Projeto tesseract.png" alt="Projeto Tesseract" />
-                </div>
-                
-                <div className="containerFotosJs">
-                    <img className="projetosImg" src="../../../public/img/projetos/Projeto RelógioDinamico.png" alt="Projeto God Of War" />
-                </div>
-
-            </div>
         </div>
         
 
