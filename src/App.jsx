@@ -10,7 +10,7 @@ import SobreMim from './components/SobreMim/SobreMim';
 import Parallax from './components/Parallax/Parallax';
 import Curriculo from './components/Curriculo/Curriculo';
 import Projeto from './components/Projetos/Projetos';
-import Contato from './components/Contato/Contato'
+import Social from './components/Social/Social';
 
 function App() {
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
       <Parallax />
       <Curriculo />
       <Projeto />
-      <Contato />
+      <Social />
     </>
   );
 }
