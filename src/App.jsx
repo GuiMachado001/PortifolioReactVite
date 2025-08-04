@@ -11,6 +11,7 @@ import Parallax from './components/Parallax/Parallax';
 import Curriculo from './components/Curriculo/Curriculo';
 import Projeto from './components/Projetos/Projetos';
 import Social from './components/Social/Social';
+import Footer from './components/Footer/Footer';
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
       <Curriculo />
       <Projeto />
       <Social />
+      <Footer />
     </>
   );
 }
