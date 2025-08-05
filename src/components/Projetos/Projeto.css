@@ -49,3 +49,33 @@
 
   flex-wrap: wrap;
 }
+
+
+@media (min-width: 0px) and (max-width: 1500px){
+  #projeto{
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .containerGeralCards{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+  .containerTitleProjeto > h1{
+
+    font-size: 35px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgb(255, 255, 255);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+  
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 321px) and (max-width: 480px) {
+
+
+}

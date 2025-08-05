@@ -4,7 +4,7 @@ import Conhecimento from './Conhecimento/Conhecimento';
 
 function Curriculo(){
     return(
-        <div className='cursos'>
+        <div id='cursos'>
 
         <div className="containerTitleConhecimetos">
             <span>Cursos e Conhecimentos</span>

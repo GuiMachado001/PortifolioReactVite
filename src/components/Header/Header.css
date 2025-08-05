@@ -34,12 +34,12 @@
 }
 
 @media (min-width: 0px) and (max-width: 320px) {
-    header h1{
+    .header{
         display: none;
     }
 }
 @media (min-width: 321px) and (max-width: 480px){
-    header h1{
+    .header{
         display: none;
     }
 }

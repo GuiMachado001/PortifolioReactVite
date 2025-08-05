@@ -1,4 +1,4 @@
-import './Conhecimento.css'
+import '../Curriculo.css'
 
 function Conhecimento(props){
     return(

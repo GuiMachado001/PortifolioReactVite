@@ -1,4 +1,4 @@
-.cursos{
+#cursos{
     width: 100vw;
     height: auto;
 
@@ -50,7 +50,7 @@
     width: 50%;
     height: 830px;
     
-    border: 2px solid #ffffff7e;
+    border: 2px solid v;
 
     display: flex;
     align-items: center;
@@ -63,8 +63,31 @@
 }
 
 
+.boxCurso{
+    width: 80%;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid #ffffff7e;
+    background-color: #18181b;
 
-
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s all ease-in;
+}
+.boxCurso:hover, .boxConhecimento:hover{
+    transform: scale(1.1);
+}
+.cursoName{
+    color: white;
+    font-weight: 900;
+}
+.cursoInstituicao{
+    color: white;
+    /* font-weight: 600; */
+}
 
 
 
@@ -162,12 +185,13 @@
     color: #9849ff;
 }
 
-@media (min-width: 0px) and (max-width: 320px){
+@media (min-width: 0px) and (max-width: px){
     #cursos{
         width: 100vw;
         height: auto;
+        padding: 0;
     }
-    .containerTitleConhecimetos > h1{
+    .containerTitleConhecimetos > span{
         font-size: 25px;
     }
     .containerCursosConhecimento{
@@ -176,6 +200,9 @@
 
         flex-direction: column;
     }
+    .containerTitleConhecimento h1{
+        font-size: 15px;
+    }
 
 
     .containerCursos{
@@ -183,6 +210,24 @@
         height: 400px;
         
         border: 2px solid #ffffff7e;
+    }
+    .boxCurso{
+        width: 100%;
+        height: 100px;
+        padding: 5px;
+        border: 2px solid #ffffff7e;
+        background-color: #18181b;
+    
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cursoName{
+        color: white;
+        font-weight: 900;
+        font-size: 10px;
     }
     .cursoInstituicao{
         color: white;
@@ -213,8 +258,9 @@
     #cursos{
         width: 100vw;
         height: auto;
+        padding: 0;
     }
-    .containerTitleConhecimetos > h1{
+    .containerTitleConhecimetos > span{
         font-size: 25px;
     }
     .containerCursosConhecimento{
@@ -223,6 +269,9 @@
 
         flex-direction: column;
     }
+    .containerTitleConhecimento h1{
+        font-size: 15px;
+    }
 
 
     .containerCursos{
@@ -230,6 +279,24 @@
         height: 400px;
         
         border: 2px solid #ffffff7e;
+    }
+    .boxCurso{
+        width: 100%;
+        height: 100px;
+        padding: 5px;
+        border: 2px solid #ffffff7e;
+        background-color: #18181b;
+    
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cursoName{
+        color: white;
+        font-weight: 900;
+        font-size: 10px;
     }
     .cursoInstituicao{
         color: white;
@@ -262,7 +329,7 @@
         width: 100vw;
         height: auto;
     }
-    .containerTitleConhecimetos > h1{
+    .containerTitleConhecimetos > span{
         font-size: 25px;
     }
     .containerCursosConhecimento{
@@ -280,6 +347,24 @@
         height: 400px;
         
         border: 2px solid #ffffff7e;
+    }
+    .boxCurso{
+        width: 100%;
+        height: 100px;
+        padding: 5px;
+        border: 2px solid #ffffff7e;
+        background-color: #18181b;
+    
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cursoName{
+        color: white;
+        font-weight: 900;
+        font-size: 10px;
     }
     .cursoInstituicao{
         color: white;
@@ -311,7 +396,7 @@
         width: 100vw;
         height: auto;
     }
-    .containerTitleConhecimetos > h1{
+    .containerTitleConhecimetos > span{
         font-size: 25px;
     }
     .containerCursosConhecimento{
@@ -330,7 +415,24 @@
         
         border: 2px solid #ffffff7e;
     }
-
+    .boxCurso{
+        width: 100%;
+        height: 100px;
+        padding: 5px;
+        border: 2px solid #ffffff7e;
+        background-color: #18181b;
+    
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cursoName{
+        color: white;
+        font-weight: 900;
+        font-size: 10px;
+    }
     .cursoInstituicao{
         color: white;
         font-size: 10px;
