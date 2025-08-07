@@ -4,7 +4,7 @@ import './SobreMim.css'
 function SobreMim(){
     return(
 
-        <div className='sobreMim'>
+        <div id='sobreMim'>
         <div className="containerTitleSobreMim">
             <h1>Sobre Mim</h1>
         </div>

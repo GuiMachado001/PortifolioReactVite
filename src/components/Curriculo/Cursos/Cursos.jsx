@@ -1,4 +1,3 @@
-import './Cursos.css'
 
 function Cursos(props){
     return(

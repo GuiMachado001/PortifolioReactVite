@@ -11,7 +11,7 @@ function Home() {
   }, []); // roda só uma vez no mount
 
   return (
-    <div className='home'>
+    <div id='home'>
       <div className="containerHome">
         <div
           className="containerName"

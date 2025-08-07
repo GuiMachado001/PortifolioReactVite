@@ -1,21 +1,32 @@
-import '../../App.css'
-import './Header.css'
+import './Header.css';
 
-function Header(){
-    return(
-        <div className='header'>
-            <h1>Guilherme Machado</h1>
-            <nav className='nav-bar'>
-                <ul className="navList">
-                    <li className="navItem active"><a href="#home">Home</a></li>
-                    <li className="navItem active"><a href="#sobreMim">Sobre Mim</a></li>
-                    <li className="navItem active"><a href="#cursos">Meus Cursos</a></li>
-                    <li className="navItem active"><a href="#projeto">Projetos</a></li>
-                    <li className="navItem active"><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    );
+function Header() {
+  return (
+    <nav className="navbar navbar-expand-lg custom-navbar">
+      <a className="navbar-brand text-white" href="#">Guilherme Machado</a>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul className="navbar-nav ms-auto">
+          <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
+          <li className="nav-item"><a className="nav-link" href="#sobreMim">Sobre Mim</a></li>
+          <li className="nav-item"><a className="nav-link" href="#cursos">Meus Cursos</a></li>
+          <li className="nav-item"><a className="nav-link" href="#projeto">Projetos</a></li>
+          <li className="nav-item"><a className="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
 
 export default Header;

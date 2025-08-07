@@ -1,5 +1,4 @@
 import './Card.css'
-
 function Card(props) {
   return (
     <div
@@ -17,8 +16,8 @@ function Card(props) {
               </div>
 
               <div className="nameProjeto">
-                <h1>{props.nomeProjeto}</h1>
-                <h3>{props.desc1Projeto}</h3>
+                <span className='spnNameProject'>{props.nomeProjeto}</span>
+                <span className='spnDescProject'>{props.desc1Projeto}</span>
               </div>
             </div>
           </div>
@@ -27,7 +26,7 @@ function Card(props) {
         <div className="front">
           <div className="flipCardBack">
             <div className="containerDescBack">
-              <h3>{props.desc2Projeto}</h3>
+              <span>{props.desc2Projeto}</span>
             </div>
 
 

@@ -1,4 +1,3 @@
-import '../Curriculo.css'
 
 function Conhecimento(props){
     return(
@@ -7,7 +6,7 @@ function Conhecimento(props){
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out">
                     <div class="containerTitleConhecimento">
-                        <h1>- {props.TitleConhecimento} -</h1>
+                        <span>- {props.TitleConhecimento} -</span>
                     </div>
                     <div class="containerDescConhecimento">
                         <ul>

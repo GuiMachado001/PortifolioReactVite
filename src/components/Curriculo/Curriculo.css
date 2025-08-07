@@ -50,7 +50,7 @@
     width: 50%;
     height: 830px;
     
-    border: 2px solid v;
+    border: 2px solid #ffffff7e;
 
     display: flex;
     align-items: center;
@@ -128,9 +128,9 @@
     align-items: center;
     justify-content: center;
 }
-.containerTitleConhecimento > h1{
+.containerTitleConhecimento > span{
     color: white;
-
+    font-size: 20px;
 }
 
 .containerDescConhecimento{
@@ -185,11 +185,10 @@
     color: #9849ff;
 }
 
-@media (min-width: 0px) and (max-width: px){
+@media (min-width: 0px) and (max-width: 320px){
     #cursos{
         width: 100vw;
         height: auto;
-        padding: 0;
     }
     .containerTitleConhecimetos > span{
         font-size: 25px;
@@ -199,9 +198,6 @@
         height: auto;
 
         flex-direction: column;
-    }
-    .containerTitleConhecimento h1{
-        font-size: 15px;
     }
 
 
@@ -258,7 +254,6 @@
     #cursos{
         width: 100vw;
         height: auto;
-        padding: 0;
     }
     .containerTitleConhecimetos > span{
         font-size: 25px;
@@ -268,9 +263,6 @@
         height: auto;
 
         flex-direction: column;
-    }
-    .containerTitleConhecimento h1{
-        font-size: 15px;
     }
 
 
