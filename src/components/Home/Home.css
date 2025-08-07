@@ -9,7 +9,8 @@
 
 .containerHome{
     width: 80%;
-    height: 90vh;
+    height: 70vh;
+    /* padding: 20px; */
 
     background: rgba(255, 255, 255, 0.04);
     box-shadow: 0 8px 32px 0 #a562fc94;
@@ -221,6 +222,20 @@
     width: 150px;
     height: 150px;
   } 
+
+   .titleApresentacao h1{
+    font-size: 10px;
+    color: white;
+}
+.titleApresentacao span{
+    font-size: 10px;
+    color: #9849ff;
+    text-shadow: 0 0 10px #9849ff;
+}
+.titleApresentacao p{
+    font-size: 10px;
+    color: white;
+}
 
 }
 
