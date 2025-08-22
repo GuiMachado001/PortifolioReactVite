@@ -13,12 +13,10 @@ import Curriculo from './components/Curriculo/Curriculo';
 import Projeto from './components/Projetos/Projetos';
 import Social from './components/Social/Social';
 import Footer from './components/Footer/Footer';
-import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll';
 
 function App() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const { scrollYProgress } = useScroll();
-    const itens = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
 
 
   useEffect(() => {
@@ -57,9 +55,7 @@ function App() {
       <Curriculo />
       <Projeto />
       <Social />
-    <div>
-      <InfiniteScroll items={itens} />
-    </div>
+
       <Footer />
     </>
   );
