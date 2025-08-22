@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion"; // ✅ import useScroll
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,9 +13,13 @@ import Curriculo from './components/Curriculo/Curriculo';
 import Projeto from './components/Projetos/Projetos';
 import Social from './components/Social/Social';
 import Footer from './components/Footer/Footer';
+import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll';
 
 function App() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const { scrollYProgress } = useScroll();
+    const itens = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+
 
   useEffect(() => {
     AOS.init();
@@ -26,6 +30,8 @@ function App() {
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
+
+
   }, []);
 
   return (
@@ -34,7 +40,13 @@ function App() {
       <motion.div
         className="cursor"
         animate={{ x: pos.x - 15, y: pos.y - 15 }}
-        transition={{ duration: 0 }} // sem delay
+        transition={{ duration: 0 }}
+      />
+
+      {/* Barra de scroll */}
+      <motion.div 
+        className="scroll-progress"
+        style={{ scaleX: scrollYProgress }}
       />
 
       <Header />
@@ -45,6 +57,9 @@ function App() {
       <Curriculo />
       <Projeto />
       <Social />
+    <div>
+      <InfiniteScroll items={itens} />
+    </div>
       <Footer />
     </>
   );

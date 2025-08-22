@@ -14,3 +14,13 @@ body {
   mix-blend-mode: difference;
   z-index: 100;
 }
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: #9849ff;
+  transform-origin: 0%;
+  z-index: 9999;
+}
