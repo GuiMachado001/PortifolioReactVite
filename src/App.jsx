@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll } from "framer-motion"; // ✅ import useScroll
+import { motion, useScroll } from "framer-motion";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -16,8 +16,8 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [hasMouse, setHasMouse] = useState(true);
   const { scrollYProgress } = useScroll();
-
 
   useEffect(() => {
     AOS.init();
@@ -26,20 +26,31 @@ function App() {
     const handleMouseMove = (e) => {
       setPos({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
 
+    // Detecta se o dispositivo é touch
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    setHasMouse(!isTouch);
 
+    if (!isTouch) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
+
+    // cleanup (sempre roda, mesmo em touch)
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
     <>
-      {/* Cursor animado */}
-      <motion.div
-        className="cursor"
-        animate={{ x: pos.x - 15, y: pos.y - 15 }}
-        transition={{ duration: 0 }}
-      />
+      {/* Cursor animado só no desktop */}
+      {hasMouse && (
+        <motion.div
+          className="cursor"
+          animate={{ x: pos.x - 15, y: pos.y - 15 }}
+          transition={{ duration: 0 }}
+        />
+      )}
 
       {/* Barra de scroll */}
       <motion.div 
@@ -55,7 +66,6 @@ function App() {
       <Curriculo />
       <Projeto />
       <Social />
-
       <Footer />
     </>
   );
