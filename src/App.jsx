@@ -12,6 +12,7 @@ import Parallax from './components/Parallax/Parallax';
 import Curriculo from './components/Curriculo/Curriculo';
 import Projeto from './components/Projetos/Projetos';
 import Social from './components/Social/Social';
+import Whave from './components/Whave/Whave';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
       <Curriculo />
       <Projeto />
       <Social />
+      <Whave />
       <Footer />
     </>
   );

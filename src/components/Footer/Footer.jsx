@@ -1,23 +1,14 @@
-import './Footer.css'
+import './Footer.css';
 
-function Footer(){
-    return(
-        <>
-            <div className="containerWhave">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path 
-                        fill="#18181b" 
-                        fillOpacity="1" 
-                        d="M0,160L24,138.7C48,117,96,75,144,101.3C192,128,240,224,288,272C336,320,384,320,432,298.7C480,277,528,235,576,234.7C624,235,672,277,720,277.3C768,277,816,235,864,229.3C912,224,960,256,1008,240C1056,224,1104,160,1152,144C1200,128,1248,160,1296,181.3C1344,203,1392,213,1416,218.7L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
-                    />
-                </svg>
-            </div>
-            <div className="containerCopyright">
-                <i className="fa-regular fa-copyright"></i>
-                <span> Guilherme Machado</span>
-            </div>
-        </>
-    );
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footerContainer">
+        <p>© {new Date().getFullYear()} Guilherme Machado. Todos os direitos reservados.</p>
+        {/* <p className="footerCredit"><a className='creditos' href="https://guilhermemachadodev.netlify.app/" target='_blank'>Feito por Guilherme Machado</a></p> */}
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
