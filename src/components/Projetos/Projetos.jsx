@@ -27,18 +27,18 @@ function Projeto(){
                     desc1Projeto="Projeto realizado para a Feria Bosque da Paz"
                     desc2Projeto="Desenvolvimento de uma plataforma online para gerenciar a Feira Bosque da Paz, com recursos para cadastro de expositores, artistas e atrações culturais. O sistema inclui um ambiente administrativo, facilita a comunicação com o público e parceiros, e promove a visibilidade dos produtos regionais, incentivando a inclusão digital e a economia criativa."
                 /> 
+                <Card
+                    imgCard="/img/projetos/PortifolioVideomaker.png"
+                    nomeProjeto="Portifólio VideoMaker"
+                    desc1Projeto="Portfólio desenvolvido para um profissional de criação de vídeos"
+                    desc2Projeto="Site moderno e responsivo, criado para apresentar trabalhos audiovisuais e fortalecer a presença digital de um VideoMaker, destacando projetos com organização e impacto visual."
+                    gitHubProjeto="https://github.com/Guilherme-Machado01/Projeto-Netflix"
+                />
                 <Card 
                     imgCard="/img/projetos/ProjetoSitePortifolio.png"
                     nomeProjeto="Portifólio"
                     desc1Projeto="Portifólio criado em React"
                     desc2Projeto="Portifólio criado com React para o aprimoramento de habilidades e divulgações de trabalhos e projetos pessoais"
-                />
-                <Card
-                    imgCard="/img/projetos/PojetoNetflix.png"
-                    nomeProjeto="Projeto Netflix"
-                    desc1Projeto="Projeto pertencente ao curso Desenvolvimento Web - Front End"
-                    desc2Projeto="O projeto Netflix foi o projeto final do curso de Desenvolvimento Web - Front End (Senac Hub Academy) onde foi usado Html, Css e JS... o trabalho consistia em recriar um site e apresenta-lo a turma que se iniciava em seguida. Como decisão escolhi a Netflix por proporcionar um desafio pessoal..."
-                    gitHubProjeto="https://github.com/Guilherme-Machado01/Projeto-Netflix"
                 />
                 <Card
                     imgCard="/img/projetos/ProjetoGodOfWar.png"
