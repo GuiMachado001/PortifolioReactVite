@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useMotionValue } from "framer-motion";
+import { motion, useScroll, useMotionValue, useSpring } from "framer-motion"; 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -19,15 +19,15 @@ import Footer from './components/Footer/Footer';
 function App() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  
+  // ESTADO PARA CONTROLAR O INÍCIO DA ANIMAÇÃO
+  const [loading, setLoading] = useState(true);
 
   const [hasMouse, setHasMouse] = useState(true);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    AOS.init({
-      once: true,
-      offset: 100
-    });
+    AOS.init({ once: true, offset: 100 });
     
     const handleMouseMove = (e) => {
       mouseX.set(e.clientX - 15);
@@ -48,15 +48,12 @@ function App() {
 
   return (
     <>
-      <Preloader />
+      <Preloader onComplete={() => setLoading(false)} />
 
       {hasMouse && (
         <motion.div
           className="cursor"
-          style={{ 
-            x: mouseX, 
-            y: mouseY 
-          }}
+          style={{ x: mouseX, y: mouseY }}
         />
       )}
 
@@ -67,7 +64,10 @@ function App() {
 
       <Header />
       <Stars />
-      <Home />
+      
+
+      <Home startAnimation={!loading} />
+      
       <SobreMim />
       <Parallax />
       <Curriculo />
