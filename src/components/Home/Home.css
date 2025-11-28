@@ -1,16 +1,22 @@
-/* --- CONFIGURAÇÕES DA SEÇÃO HOME --- */
+:root {
+  --primary-purple: #9849ff;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-white: #ffffff;
+  --text-gray: #b0b0b0;
+}
+
 #home {
   width: 100%;
-  min-height: 100vh; /* Ocupa a altura total da tela */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden; /* Evita que elementos vazem */
-  padding-top: 80px; /* Compensação para o Header Fixo */
+  overflow: hidden;
+  padding-top: 80px;
 }
 
-/* Efeito de brilho de fundo (atrás do cartão) */
 .bg-glow {
   position: absolute;
   width: 600px;
@@ -23,28 +29,23 @@
   pointer-events: none;
 }
 
-/* --- CARD DE VIDRO (CONTAINER PRINCIPAL) --- */
 .containerHome {
   width: 90%;
   max-width: 1200px;
   min-height: 70vh;
-  
-  /* Efeito Glassmorphism */
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  
+  border: 1px solid var(--glass-border);
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar linha no mobile */
+  flex-wrap: wrap;
   padding: 40px;
   position: relative;
   z-index: 1;
 }
 
-/* --- LADO ESQUERDO: TEXTOS --- */
 .containerName {
   flex: 1;
   min-width: 300px;
@@ -56,7 +57,7 @@
 
 .greeting {
   font-size: 1.2rem;
-  color: var(--primary-purple); /* Usa a variável global */
+  color: var(--primary-purple);
   margin-bottom: 10px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -64,13 +65,12 @@
 
 .titleApresentacao h1 {
   font-size: 3.5rem;
-  color: #fff;
+  color: var(--text-white);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 10px;
 }
 
-/* Cursor piscando para o efeito de digitação */
 .typing-text::after {
   content: '|';
   margin-left: 5px;
@@ -86,12 +86,11 @@
 
 .titleApresentacao span.subtitle {
   font-size: 1.5rem;
-  color: #b0b0b0;
+  color: var(--text-gray);
   display: block;
   margin-bottom: 30px;
 }
 
-/* Botões (CTA) */
 .cta-buttons {
   display: flex;
   gap: 15px;
@@ -131,7 +130,6 @@
   color: white;
 }
 
-/* --- LADO DIREITO: FOTO E ÓRBITA --- */
 .containerFoto {
   flex: 1;
   min-width: 300px;
@@ -150,7 +148,6 @@
   align-items: center;
 }
 
-/* Círculo pontilhado giratório */
 .circle-orbit {
   position: absolute;
   width: 100%;
@@ -165,7 +162,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* Ícones dos planetas */
 .planet-icon {
   position: absolute;
   width: 50px;
@@ -177,7 +173,6 @@
   align-items: center;
   box-shadow: 0 0 15px rgba(152, 73, 255, 0.5);
   border: 1px solid var(--primary-purple);
-  /* Gira ao contrário para manter o ícone de pé */
   animation: counterRotate 20s linear infinite;
 }
 
@@ -186,7 +181,6 @@
   height: 60%;
 }
 
-/* Posições dos ícones no círculo */
 .item-1 { top: 0; left: 50%; transform: translate(-50%, -50%); margin-top: -25px; }
 .item-2 { top: 50%; right: 0; transform: translate(50%, -50%); margin-right: -25px; }
 .item-3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); margin-bottom: -25px; }
@@ -197,7 +191,6 @@
   to { transform: rotate(-360deg); }
 }
 
-/* Foto do Avatar */
 .developer-img-wrapper {
   width: 280px;
   height: 280px;
@@ -216,7 +209,6 @@
   object-fit: cover;
 }
 
-/* --- ÍCONE SCROLL DOWN (ATUALIZADO) --- */
 .scroll-down {
   position: absolute;
   bottom: 40px;
@@ -292,16 +284,28 @@
   100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
 }
 
-/* --- RESPONSIVIDADE --- */
-
-/* Tablets (iPad) e menores */
 @media (max-width: 992px) {
+  #home {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
   .containerHome {
-    flex-direction: column-reverse; /* Foto sobe, Texto desce */
+    flex-direction: column-reverse;
     padding: 30px 20px;
     height: auto;
     text-align: center;
     gap: 40px;
+  }
+
+  .scroll-down {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 
   .containerName {
@@ -323,7 +327,6 @@
   }
 }
 
-/* Celulares */
 @media (max-width: 576px) {
   .titleApresentacao h1 {
     font-size: 2.5rem;
@@ -359,7 +362,6 @@
   }
 }
 
-/* Telas muito baixas (celular deitado) */
 @media (max-height: 650px) {
   .scroll-down {
     display: none;
