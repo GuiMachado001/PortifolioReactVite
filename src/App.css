@@ -1,5 +1,8 @@
-body {
-  cursor: none; 
+/* Só esconde o cursor padrão se o dispositivo tiver um ponteiro fino (mouse) */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }
 
 .cursor {
@@ -10,17 +13,21 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  z-index: 100;
+  pointer-events: none; /* Garante que o clique passe através da bolinha */
+  mix-blend-mode: difference; /* Efeito legal que inverte a cor dependendo do fundo */
+  z-index: 9999; /* Z-index bem alto para ficar acima de tudo */
+  background-color: rgba(152, 73, 255, 0.1); /* Um leve preenchimento roxo */
+  backdrop-filter: blur(1px);
 }
+
 .scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 5px;
+  height: 4px; /* Um pouco mais fino fica mais elegante */
   width: 100%;
   background: #9849ff;
   transform-origin: 0%;
-  z-index: 9999;
+  z-index: 10000; /* Acima do cursor */
+  box-shadow: 0 0 10px #9849ff; /* Brilho neon na barra */
 }

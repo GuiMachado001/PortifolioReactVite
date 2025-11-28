@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useMotionValue, useSpring } from "framer-motion"; // Adicionei useMotionValue e useSpring
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -16,19 +16,29 @@ import Whave from './components/Whave/Whave';
 import Footer from './components/Footer/Footer';
 
 function App() {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Configuração da suavidade (Mola)
+  const springConfig = { damping: 25, stiffness: 700 };
+  const cursorX = useSpring(mouseX, springConfig);
+  const cursorY = useSpring(mouseY, springConfig);
+
   const [hasMouse, setHasMouse] = useState(true);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-
+    AOS.init({
+      once: true, 
+      offset: 100
+    });
+    
     const handleMouseMove = (e) => {
-      setPos({ x: e.clientX, y: e.clientY });
+      mouseX.set(e.clientX - 15); 
+      mouseY.set(e.clientY - 15);
     };
 
-    // Detecta se o dispositivo é touch
+    // Detecta touch
     const isTouch = window.matchMedia("(pointer: coarse)").matches;
     setHasMouse(!isTouch);
 
@@ -36,24 +46,25 @@ function App() {
       window.addEventListener("mousemove", handleMouseMove);
     }
 
-    // cleanup (sempre roda, mesmo em touch)
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
     <>
-      {/* Cursor animado só no desktop */}
+      {/* Cursor Suave */}
       {hasMouse && (
         <motion.div
           className="cursor"
-          animate={{ x: pos.x - 15, y: pos.y - 15 }}
-          transition={{ duration: 0 }}
+          style={{ 
+            translateX: cursorX, 
+            translateY: cursorY 
+          }}
         />
       )}
 
-      {/* Barra de scroll */}
+      {/* Barra de Progresso */}
       <motion.div 
         className="scroll-progress"
         style={{ scaleX: scrollYProgress }}
