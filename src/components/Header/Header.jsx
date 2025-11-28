@@ -36,8 +36,7 @@ function Header() {
       <div className="container">
         
         <a className="navbar-brand" href="#home">
-           {/* Substitua pela sua logo se tiver */}
-           Guilherme <span className="text-primary-color">Machado</span>
+           <img src="./../../../public/img/fotos/logo.png" alt="Logo Guilherme Machado" className="logo-header" />
         </a>
         
         <button
