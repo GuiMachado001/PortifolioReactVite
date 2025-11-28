@@ -8,6 +8,7 @@ function SobreMim() {
     { name: 'CSS3', icon: 'fa-brands fa-css3-alt', color: '#1572B6' },
     { name: 'JavaScript', icon: 'fa-brands fa-square-js', color: '#F7DF1E' },
     { name: 'React', icon: 'fa-brands fa-react', color: '#61DAFB' },
+    { name: 'PHP', icon: 'fa-brands fa-php', color: '#777BB4' }, // Adicionado aqui
     { name: 'Figma', icon: 'fa-brands fa-figma', color: '#F24E1E' },
     { name: 'Python', icon: 'fa-brands fa-python', color: '#3776AB' },
     { name: 'MySQL', icon: 'fa-solid fa-database', color: '#00758F' },
