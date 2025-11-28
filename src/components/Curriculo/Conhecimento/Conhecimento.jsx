@@ -9,12 +9,13 @@ function Conhecimento({ title, items, icons }) {
             
             <div className="card-header">
                 <h3>{title}</h3>
+                <div className="header-line"></div>
             </div>
             
             <div className="card-body">
-                <ul>
+                <ul className="tech-tags">
                     {items.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <li key={index} className="tag">{item}</li>
                     ))}
                 </ul>
             </div>
