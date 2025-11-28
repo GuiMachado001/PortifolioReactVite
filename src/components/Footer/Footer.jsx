@@ -20,7 +20,7 @@ function Footer() {
         <div className="footer-col brand-col">
             <h2 className="footer-logo">Guilherme <span className="highlight">Machado</span></h2>
             <p className="footer-desc">
-              Desenvolvedor Front-End focado em criar interfaces modernas, 
+              Desenvolvedor focado em criar interfaces modernas, 
               performáticas e experiências digitais excepcionais.
             </p>
         </div>
