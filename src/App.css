@@ -1,4 +1,3 @@
-/* Só esconde o cursor padrão se o dispositivo tiver um ponteiro fino (mouse) */
 @media (pointer: fine) {
   body {
     cursor: none;
