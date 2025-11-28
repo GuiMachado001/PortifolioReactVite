@@ -59,6 +59,17 @@ function Home() {
         </div>
 
       </div>
+
+<div className="scroll-down">
+    <div className="mouse">
+        <div className="wheel"></div>
+    </div>
+    <div className="arrows">
+        <span className="a1"></span>
+        <span className="a2"></span>
+        <span className="a3"></span>
+    </div>
+</div>
     </section>
   );
 }

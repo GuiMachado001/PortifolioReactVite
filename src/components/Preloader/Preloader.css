@@ -1,0 +1,95 @@
+/* Container que cobre a tela toda */
+.preloader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #050505;
+    z-index: 99999; /* Acima de tudo, até do cursor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Classe para remover o loader deslizando para cima */
+.preloader-container.fade-out {
+    transform: translateY(-100%);
+}
+
+.loader-content {
+    text-align: center;
+    width: 300px;
+}
+
+/* O Contador Gigante */
+.counter {
+    font-family: 'Bebas Neue', sans-serif; /* Certifique-se de ter importado essa fonte */
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.percent {
+    font-size: 40px;
+    color: #9849ff;
+    position: absolute;
+    top: 10px;
+    right: -30px;
+}
+
+/* Barra de Progresso Fundo */
+.progress-bar-bg {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Barra de Progresso Preenchimento */
+.progress-bar-fill {
+    height: 100%;
+    background-color: #9849ff;
+    box-shadow: 0 0 10px #9849ff;
+    transition: width 0.1s linear;
+}
+
+/* Texto Tech */
+.loading-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Piscar o cursor > */
+.blink {
+    animation: blinker 1s linear infinite;
+    color: #9849ff;
+    font-weight: bold;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .counter {
+        font-size: 80px;
+    }
+    .percent {
+        font-size: 25px;
+        right: -20px;
+    }
+}

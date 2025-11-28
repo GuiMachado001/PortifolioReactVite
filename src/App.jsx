@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useMotionValue, useSpring } from "framer-motion"; // Adicionei useMotionValue e useSpring
+import { motion, useScroll, useMotionValue, useSpring } from "framer-motion";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import './App.css';
+
+// --- IMPORTANTE: Importe o Preloader aqui ---
+import Preloader from './components/Preloader/Preloader'; 
+
 import Header from './components/Header/Header';
 import Stars from './components/Stars/Stars';
 import Home from './components/Home/Home';
@@ -16,10 +20,9 @@ import Whave from './components/Whave/Whave';
 import Footer from './components/Footer/Footer';
 
 function App() {
+  // CONFIGURAÇÃO DO CURSOR
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
-  // Configuração da suavidade (Mola)
   const springConfig = { damping: 25, stiffness: 700 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
@@ -28,17 +31,13 @@ function App() {
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    AOS.init({
-      once: true, 
-      offset: 100
-    });
+    AOS.init({ once: true, offset: 100 });
     
     const handleMouseMove = (e) => {
-      mouseX.set(e.clientX - 15); 
+      mouseX.set(e.clientX - 15);
       mouseY.set(e.clientY - 15);
     };
 
-    // Detecta touch
     const isTouch = window.matchMedia("(pointer: coarse)").matches;
     setHasMouse(!isTouch);
 
@@ -53,6 +52,9 @@ function App() {
 
   return (
     <>
+      {/* 1. O Preloader deve ser a primeira coisa aqui */}
+      <Preloader />
+
       {/* Cursor Suave */}
       {hasMouse && (
         <motion.div
