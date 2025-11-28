@@ -34,21 +34,20 @@ function SobreMim() {
 
         <div className="bento-grid">
           
-          {/* CAIXA 1: TEXTO PRINCIPAL (Grande) */}
-{/* CAIXA 1: TEXTO PRINCIPAL */}
-<div className="bento-card bio-card" data-aos="fade-right">
-  <div className="card-icon"><i className="fa-solid fa-code"></i></div>
-  <h3>Minha Missão</h3>
-  <p>
-    Muito prazer, sou <strong>Guilherme Machado</strong>. Desenvolvedor por vocação e criativo por natureza. Acredito que o código é a ferramenta mais poderosa para construir o futuro.
-  </p>
-  <p className="mt-2">
-    Graduado pela <strong>Estácio</strong> e lapidado pelos desafios reais da <strong>Fábrica de Software do Senac</strong>, desenvolvi uma obsessão saudável por performance, interfaces limpas e animações fluidas.
-  </p>
-  <p className="mt-2 text-highlight">
-    "Crio experiências web que conectam marcas e pessoas através da tecnologia."
-  </p>
-</div>
+
+        <div className="bento-card bio-card" data-aos="fade-right">
+          <div className="card-icon"><i className="fa-solid fa-code"></i></div>
+          <h3>Minha Missão</h3>
+          <p>
+            Muito prazer, sou <strong>Guilherme Machado</strong>. Desenvolvedor por vocação e criativo por natureza. Acredito que o código é a ferramenta mais poderosa para construir o futuro.
+          </p>
+          <p className="mt-2">
+            Graduado pela <strong>Estácio</strong> e lapidado pelos desafios reais da <strong>Fábrica de Software do Senac</strong>, desenvolvi uma obsessão saudável por performance, interfaces limpas e animações fluidas.
+          </p>
+          <p className="mt-2 text-highlight">
+            Para criar a solução perfeita, primeiro é preciso compreender a dor do usuário.
+          </p>
+        </div>
 
           {/* CAIXA 2: ESTATÍSTICAS (Pequenas) */}
           <div className="bento-card stat-card s1" data-aos="zoom-in" data-aos-delay="100">
