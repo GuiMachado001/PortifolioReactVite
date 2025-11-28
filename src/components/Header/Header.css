@@ -80,7 +80,7 @@
 }
 
 .logo-header {
-  height: 40px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -90,19 +90,9 @@
   transform: scale(1.05);
 }
 
-.nav-link.active {
-    color: #9849ff !important;
-    font-weight: 700;
-}
-
-/* Opcional: manter o sublinhado na seção ativa */
-.nav-link.active::after {
-    width: 100%;
-}
-
 @media (max-width: 991px) {
   .logo-header {
-    height: 40px;
+    height: 40px; 
   }
 }
 

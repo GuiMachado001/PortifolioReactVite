@@ -36,7 +36,8 @@ function Header() {
       <div className="container">
         
         <a className="navbar-brand" href="#home">
-           <img src="./../../../public/img/fotos/logo.png" alt="Logo Guilherme Machado" className="logo-header" />
+           {/* CORREÇÃO AQUI: O caminho deve partir da raiz (public) */}
+           <img src="/img/fotos/logo.png" alt="Logo Guilherme Machado" className="logo-header" />
         </a>
         
         <button
