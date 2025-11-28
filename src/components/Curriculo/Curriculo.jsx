@@ -7,7 +7,7 @@ function Curriculo() {
 
     const listaCursos = [
         { curso: "Análise e Desenvolvimento de Sistemas", escola: "Estácio", ano: "Conclusão 2024" },
-        { curso: "Técnico em Desenvolvimento de Sistemas", escola: "Senac Hub Academy (Fábrica de Software)", ano: "Cursando" },
+        { curso: "Técnico em Desenvolvimento de Sistemas", escola: "Senac Hub Academy (Fábrica de Software)", ano: "conclusão  2025" },
         { curso: "Desenvolvimento Web - Front-End", escola: "Senac Hub Academy", ano: "2023" },
         { curso: "JavaScript Essentials 1", escola: "Cisco Networking Academy", ano: "2023" },
         { curso: "Python Essentials 1 & 2", escola: "Cisco Networking Academy", ano: "2023" },

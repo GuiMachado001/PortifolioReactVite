@@ -4,10 +4,9 @@
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    gap: 0; /* Remove espaço, as bolinhas encostam na linha */
+    gap: 0; 
 }
 
-/* --- PONTOS (Bolinhas) --- */
 .cyber-dot {
     width: 12px;
     height: 12px;
@@ -16,30 +15,26 @@
     border-radius: 50%;
     box-shadow: 0 0 10px #9849ff;
     position: relative;
-    z-index: 2; /* Fica acima da linha */
+    z-index: 2;
     flex-shrink: 0;
 }
 
-/* --- A LINHA (O "Cano") --- */
 .cyber-line {
     width: 70%;
     height: 2px;
     background: rgba(152, 73, 255, 0.2);
     position: relative;
     
-    /* O SEGREDO ESTÁ AQUI: */
-    overflow: hidden; /* Esconde o feixe quando ele sai da área da linha */
+    overflow: hidden; 
 }
 
-/* --- O FEIXE DE ENERGIA --- */
 .energy-beam {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100px; /* Comprimento do rastro */
+    width: 100px; 
     height: 100%;
     
-    /* Gradiente para parecer um cometa (cabeça branca, cauda transparente) */
     background: linear-gradient(
         90deg, 
         transparent 0%, 
@@ -51,58 +46,53 @@
     animation: shootBeam 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* --- EFEITOS DE PULSO NAS BOLINHAS --- */
 
-/* Bolinha Esquerda (Dispara) */
 .sender {
     animation: pulseSender 3s infinite;
 }
 
-/* Bolinha Direita (Recebe) */
 .receiver {
     animation: pulseReceiver 3s infinite;
 }
 
 
-/* --- KEYFRAMES (Animações) --- */
 
 @keyframes shootBeam {
     0% {
-        left: -100px; /* Começa totalmente escondido na esquerda */
+        left: -100px; 
         opacity: 0;
     }
     10% {
-        opacity: 1; /* Aparece logo que entra na linha */
+        opacity: 1;
     }
     90% {
         opacity: 1;
     }
     100% {
-        left: 100%; /* Termina totalmente escondido na direita */
+        left: 100%; 
         opacity: 0;
     }
 }
 
 @keyframes pulseSender {
     0% { box-shadow: 0 0 10px #9849ff; transform: scale(1); }
-    10% { box-shadow: 0 0 25px #9849ff; transform: scale(1.2); } /* Explode ao disparar */
+    10% { box-shadow: 0 0 25px #9849ff; transform: scale(1.2); }
     30% { box-shadow: 0 0 10px #9849ff; transform: scale(1); }
     100% { box-shadow: 0 0 10px #9849ff; transform: scale(1); }
 }
 
 @keyframes pulseReceiver {
     0% { box-shadow: 0 0 10px #9849ff; transform: scale(1); }
-    60% { box-shadow: 0 0 10px #9849ff; transform: scale(1); } /* Espera o feixe chegar */
-    70% { box-shadow: 0 0 25px #ffffff; transform: scale(1.3); border-color: #fff; } /* Impacto! Fica branco */
+    60% { box-shadow: 0 0 10px #9849ff; transform: scale(1); }
+    70% { box-shadow: 0 0 25px #ffffff; transform: scale(1.3); border-color: #fff; } 
     100% { box-shadow: 0 0 10px #9849ff; transform: scale(1); border-color: #9849ff; }
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .cyber-line {
         width: 85%;
     }
     .energy-beam {
-        width: 60px; /* Rastro menor no mobile */
+        width: 60px; 
     }
 }
