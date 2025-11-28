@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useMotionValue, useSpring } from "framer-motion";
+import { motion, useScroll, useMotionValue } from "framer-motion";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import './App.css';
-
-// --- IMPORTANTE: Importe o Preloader aqui ---
-import Preloader from './components/Preloader/Preloader'; 
-
+import Preloader from './components/Preloader/Preloader';
 import Header from './components/Header/Header';
 import Stars from './components/Stars/Stars';
 import Home from './components/Home/Home';
@@ -20,18 +17,17 @@ import Whave from './components/Whave/Whave';
 import Footer from './components/Footer/Footer';
 
 function App() {
-  // CONFIGURAÇÃO DO CURSOR
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const springConfig = { damping: 25, stiffness: 700 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
 
   const [hasMouse, setHasMouse] = useState(true);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    AOS.init({ once: true, offset: 100 });
+    AOS.init({
+      once: true,
+      offset: 100
+    });
     
     const handleMouseMove = (e) => {
       mouseX.set(e.clientX - 15);
@@ -52,21 +48,18 @@ function App() {
 
   return (
     <>
-      {/* 1. O Preloader deve ser a primeira coisa aqui */}
       <Preloader />
 
-      {/* Cursor Suave */}
       {hasMouse && (
         <motion.div
           className="cursor"
           style={{ 
-            translateX: cursorX, 
-            translateY: cursorY 
+            x: mouseX, 
+            y: mouseY 
           }}
         />
       )}
 
-      {/* Barra de Progresso */}
       <motion.div 
         className="scroll-progress"
         style={{ scaleX: scrollYProgress }}
