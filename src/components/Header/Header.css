@@ -1,19 +1,115 @@
-.custom-navbar {
-    /* height: 60px; */
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 0px 10px 2px #9849ff;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.158);
-  position: sticky;
-  top: 0; /* necessário para funcionar */
-  z-index: 3;
+/* Variável para sua cor roxa */
+:root {
+  --primary-purple: #9849ff;
+  --dark-bg: #121212; /* Ajuste conforme o fundo do seu site */
 }
+
+/* --- Estilo Base da Navbar --- */
+.custom-navbar {
+  background: rgba(18, 18, 18, 0.1); /* Começa bem transparente */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+  padding: 15px 0; /* Mais espaçamento vertical para elegância */
+}
+
+/* Estado quando o usuário rola a página (mais sólido) */
+.custom-navbar.navbar-scrolled {
+  background: rgba(18, 18, 18, 0.85);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 10px 0; /* Fica mais compacto ao rolar */
+  border-bottom: 1px solid rgba(152, 73, 255, 0.3); /* Linha roxa sutil */
+}
+
+/* --- Logo --- */
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #fff !important;
+  letter-spacing: 0.5px;
+}
+
+.text-primary-color {
+  color: var(--primary-purple);
+}
+
+/* --- Links de Navegação --- */
 .custom-navbar .nav-link {
-  color: #fff;
+  color: #e0e0e0 !important;
   font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 10px;
+  position: relative;
   transition: color 0.3s ease;
 }
-.custom-navbar .nav-link:hover {
-  color: #9849ff; /* usa sua cor primária */
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #fff !important;
+}
+
+/* Animação de sublinhado ao passar o mouse */
+.custom-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--primary-purple);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%); /* Centraliza a animação */
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* --- Botão de Contato (Destaque) --- */
+.custom-navbar .btn-contact {
+  background: transparent;
+  border: 1px solid var(--primary-purple);
+  padding: 8px 20px;
+  border-radius: 50px;
+  color: var(--primary-purple) !important;
+  transition: all 0.3s ease;
+}
+
+/* Remove a linha de baixo do botão de contato especificamente */
+.custom-navbar .btn-contact::after {
+  display: none; 
+}
+
+.custom-navbar .btn-contact:hover {
+  background: var(--primary-purple);
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(152, 73, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    /* Fundo sólido ou muito desfocado no mobile para leitura */
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    border-bottom: 1px solid var(--primary-purple);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+  }
+
+  .custom-navbar .nav-link {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .custom-navbar .btn-contact {
+    display: inline-block;
+    width: 100%; /* Botão largura total no mobile */
+    margin-top: 10px;
+  }
 }

@@ -1,349 +1,278 @@
-#home{
+:root {
+  --primary-purple: #9849ff;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-white: #ffffff;
+  --text-gray: #b0b0b0;
+}
+
+#home {
+  width: 100%;
+  min-height: 100vh; /* Garante tela cheia */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* Evita scrollbar lateral indesejada */
+  padding-top: 80px; /* Espaço para o Header fixo não cobrir o conteúdo */
+}
+
+/* Efeito de luz de fundo */
+.bg-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(152,73,255,0.15) 0%, rgba(0,0,0,0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --- Container Principal (Card de Vidro) --- */
+.containerHome {
+  width: 90%;
+  max-width: 1200px;
+  min-height: 70vh;
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha no mobile */
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Lado Esquerdo: Texto --- */
+.containerName {
+  flex: 1;
+  min-width: 300px; /* Não deixa ficar muito pequeno */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  color: var(--primary-purple);
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.titleApresentacao h1 {
+  font-size: 3.5rem;
+  color: var(--text-white);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.titleApresentacao span {
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  display: block;
+  margin-bottom: 30px;
+}
+
+/* Botões de Ação (CTA) */
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary-glow {
+  padding: 12px 30px;
+  background: var(--primary-purple);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(152, 73, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(152, 73, 255, 0.6);
+  color: white;
+}
+
+.btn-secondary {
+  padding: 12px 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+  color: white;
+}
+
+/* --- Lado Direito: Foto e Órbita --- */
+.containerFoto {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.orbit-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* O círculo que gira */
+.circle-orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(152, 73, 255, 0.3); /* Borda pontilhada sutil */
+  animation: rotateOrbit 20s linear infinite;
+}
+
+/* Animação da órbita */
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Ícones na órbita */
+.planet-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(152, 73, 255, 0.5);
+  border: 1px solid var(--primary-purple);
+  
+  /* Importante: Contra-rotaciona para o ícone ficar sempre de pé */
+  animation: counterRotate 20s linear infinite;
+}
+
+.planet-icon img {
+  width: 60%;
+  height: 60%;
+}
+
+/* Posicionamento dos 4 ícones */
+.item-1 { top: 0; left: 50%; transform: translate(-50%, -50%); margin-top: -25px; } /* Topo */
+.item-2 { top: 50%; right: 0; transform: translate(50%, -50%); margin-right: -25px; } /* Direita */
+.item-3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); margin-bottom: -25px; } /* Fundo */
+.item-4 { top: 50%; left: 0; transform: translate(-50%, -50%); margin-left: -25px; } /* Esquerda */
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); } /* Gira ao contrário */
+}
+
+/* Foto Central */
+.developer-img-wrapper {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--primary-purple);
+  box-shadow: 0 0 30px rgba(152, 73, 255, 0.3);
+  position: relative;
+  z-index: 2;
+  border: 4px solid rgba(255,255,255,0.1);
+}
+
+.developer-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- RESPONSIVIDADE (Simplificada) --- */
+
+/* Tablet e Telas Médias (992px para baixo) */
+@media (max-width: 992px) {
+  .containerHome {
+    flex-direction: column-reverse; /* Foto em cima, texto embaixo no mobile */
+    padding: 30px 20px;
+    height: auto; /* Altura automática */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .containerName {
+    align-items: center; /* Centraliza texto */
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .orbit-container {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .developer-img-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Mobile (Celulares Pequenos) */
+@media (max-width: 576px) {
+  .titleApresentacao h1 {
+    font-size: 2.5rem;
+  }
+  
+  .titleApresentacao span {
+    font-size: 1.1rem;
+  }
+  
+  /* Reduzir órbita para caber na tela */
+  .orbit-container {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 20px;
+  }
+  
+  .developer-img-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .planet-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column; /* Botões um embaixo do outro */
     width: 100%;
-    height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.containerHome{
-    width: 80%;
-    height: 70vh;
-    /* padding: 20px; */
-
-    background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 8px 32px 0 #a562fc94;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.containerName{
-    width: 50%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    /* justify-content: center; */
-}
-.containerFoto{
-    width: 50%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-.header-right {
-    display: flex;
-     align-items: center;
-     justify-content: center;
-   }
-   .circle {
-     height: 33rem;
-     width: 33rem;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     
-     border-radius: 50%;
-     border: 3px solid #9849ff;
-     box-shadow: 0 0 10px #9849ff;
-     position: relative;
-     animation: circleAnim linear infinite 20s;
-   }
-   @keyframes circleAnim {
-     to {
-       transform: rotate(360deg);
-     }
- }
- @keyframes colorAnim {
- to{
-     filter: hue-rotate(360deg);
-   }
-   }
-   .circle a {
-     width: 3rem;
-     height: 3rem;
-     border-radius: 50%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     background: #29d882;
-     color: #fff;
-     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-     font-size: 22px;
-     position: absolute;
-     transition: 0.4s ease;
-     animation: colorAnim linear infinite 20s;
- 
-   }
-   .circle img{
-     width: 90%;
-     
-   }
-   .circle a:hover {
-     background: #1d222a;
-     color: #fff;
-     
-   }
-   .circle a:nth-child(1) {
-     left: calc(50% - 2rem);
-     top: -2rem;
-   }
-   .circle a:nth-child(2) {
-     top: calc(50% - 2rem);
-     right: -2rem;
-   }
-   .circle a:nth-child(3) {
-     top: calc(50% - 2rem);
-     left: -2rem;
-   }
-   .circle a:nth-child(4) {
-     left: calc(50% - 2rem);
-     bottom: -2rem;
-   }
-   .developer-img {
-     position: absolute;
-     perspective: 800px;
- 
- 
-   }
-   
-   .dev-img-wrapper {
-     width: 300px;
-     height: 300px;
-     background-color: #9849ff;
-     box-shadow: 0 0 10px #9849ff;
-     border-radius: 50%;
-     padding: 2rem 2rem 0 2rem;
-     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
-     overflow: hidden;
-   }
- 
-   .dev-img-wrapper img {
-     height: 100%;
-   }
-   .dev-works {
-     width: 25rem;
-     height: 9rem;
-     background-color: #1d222a;
-     font-size: 1.4rem;
-     text-transform: uppercase;
-     color: #fff;
-     border: 0.2rem solid #bbb;
-     border-radius: 6rem;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: 0 2rem;
-     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
-     position: absolute;
-   }
-   .dev-experience {
-     bottom: 10rem;
-     right: 33rem;
-   }
-   .dev-projects {
-     bottom: 1rem;
-     right: -2rem;
-   }
-   .dev-works span:nth-child(1) {
-     font-size: 3rem;
-     width: 50%;
-     text-align: center;
-   }
-   .dev-works span:nth-child(2) {
-     color: #9849ff;
-     width: 50%; 
-   }
-   
-   .section-border {
-     width: 0.3rem;
-     height: 90rem;
-     background-color: #9849ff;
-     box-shadow: 0 0 10px #9849ff;
-     margin-right: 5rem;
-     position: relative;
-   }
-   .section-border::before {
-     content: "";
-     width: 2rem;
-     height: 2rem;
-     border: 0.3rem solid #9849ff;
-     box-shadow: 0 0 10px #9849ff;
-     background-color: #1d222a;
-     border-radius: 50%;
-     position: absolute;
-     left: -1.1rem;
-     top: -2rem;
-   }
-
-   .titleApresentacao h1{
-    font-size: 25px;
-    color: white;
-}
-.titleApresentacao span{
-    font-size: 30px;
-    color: #9849ff;
-    text-shadow: 0 0 10px #9849ff;
-}
-.titleApresentacao p{
-    font-size: 25px;
-    color: white;
-}
-
-@media (min-width: 0px) and (max-width: 320px) {
-
-  .containerHome{
-    flex-direction: column;
   }
-  .containerFoto, .containerName{
+  
+  .btn-primary-glow, .btn-secondary {
     width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
-  .circle {
-    height: 15rem;
-    width: 15rem;
-  }
-  .dev-img-wrapper{
-    width: 150px;
-    height: 150px;
-  } 
-
-   .titleApresentacao h1{
-    font-size: 10px;
-    color: white;
-}
-.titleApresentacao span{
-    font-size: 10px;
-    color: #9849ff;
-    text-shadow: 0 0 10px #9849ff;
-}
-.titleApresentacao p{
-    font-size: 10px;
-    color: white;
-}
-
-}
-
-@media (min-width: 321px) and (max-width: 480px) {
-
-  .containerHome{
-    flex-direction: column;
-  }
-  .containerFoto, .containerName{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .circle {
-    height: 20rem;
-    width: 20rem;
-  }
-  .dev-img-wrapper{
-    width: 200px;
-    height: 200px;
-  } 
-
-}
-
-@media (min-width: 481px) and (max-width: 600px) {
-  .containerHome{
-    flex-direction: column;
-  }
-  .containerFoto, .containerName{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .circle {
-    height: 20rem;
-    width: 20rem;
-  }
-  .dev-img-wrapper{
-    width: 200px;
-    height: 200px;
-  } 
-
-}
-
-@media (min-width: 601px) and (max-width: 768px){
-  .containerHome{
-    flex-direction: column;
-  }
-  .containerFoto, .containerName{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .circle {
-    height: 20rem;
-    width: 20rem;
-  }
-  .dev-img-wrapper{
-    width: 200px;
-    height: 200px;
-  } 
-
-}
-
-@media (min-width: 769px) and (max-width: 1000px){
-  .containerHome{
-    flex-direction: column;
-  }
-  .containerFoto, .containerName{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .circle {
-    height: 20rem;
-    width: 20rem;
-  }
-  .dev-img-wrapper{
-    width: 200px;
-    height: 200px;
-  } 
-
-}
-
-@media (min-width: 1001px) and (max-width: 1200px){
-
-  .containerFoto, .containerName{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .circle {
-    height: 20rem;
-    width: 20rem;
-  }
-  .dev-img-wrapper{
-    width: 200px;
-    height: 200px;
-  } 
-
 }
