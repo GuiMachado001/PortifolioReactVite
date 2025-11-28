@@ -52,7 +52,7 @@ function Curriculo() {
                         <div className="knowledge-grid">
                             <Conhecimento 
                                 title="Front-End"
-                                items={['HTML5 Semântico', 'CSS3 / SASS', 'JavaScript Moderno', 'React.js']}
+                                items={['HTML5 Semântico', 'CSS3', 'JavaScript Moderno', 'React.js']}
                                 icons={['fa-brands fa-html5', 'fa-brands fa-css3-alt', 'fa-brands fa-square-js', 'fa-brands fa-react']}
                             />
                             
