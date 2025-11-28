@@ -4,6 +4,59 @@
   }
 }
 
+/* --- App.css / index.css --- */
+
+/* Definição das Variáveis Globais */
+:root {
+  --primary-purple: #9849ff;
+  --dark-bg: #121212;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-white: #ffffff;
+  --text-gray: #b0b0b0;
+}
+
+/* Resets e Configurações Globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* IMPORTANTE: Previne scroll lateral das estrelas */
+  background-color: var(--dark-bg);
+  color: var(--text-white);
+  font-family: 'Poppins', sans-serif; /* Sugestão de fonte moderna */
+  scroll-behavior: smooth;
+}
+
+/* Estilo da Barra de Rolagem (Scrollbar) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-purple); 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7b2cbf; 
+}
+
+/* Cursor Customizado (Oculta o padrão apenas se tiver mouse) */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
 .cursor {
   width: 30px;
   height: 30px;
