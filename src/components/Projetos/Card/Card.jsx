@@ -1,8 +1,9 @@
-import './Card.css'
+import React from 'react';
+import './Card.css';
 
 function Card(props) {
   return (
-    <div className="card-container" data-aos="fade-up" data-aos-duration="1000">
+    <div className="card-container" data-aos="fade-up" data-aos-duration="800">
       <div className="card-inner">
         
         <div className="card-front">
@@ -14,9 +15,12 @@ function Card(props) {
         </div>
 
         <div className="card-back">
+          <div className="card-glow"></div>
           <div className="card-back-content">
             <h3>{props.nomeProjeto}</h3>
-            <p>{props.desc2Projeto}</p>
+            <div className="content-scroll">
+                <p>{props.desc2Projeto}</p>
+            </div>
             {props.gitHubProjeto && (
               <a href={props.gitHubProjeto} target="_blank" rel="noopener noreferrer" className="btn-project">
                 Ver Projeto <i className="fa-brands fa-github"></i>
@@ -27,7 +31,7 @@ function Card(props) {
 
       </div>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;
