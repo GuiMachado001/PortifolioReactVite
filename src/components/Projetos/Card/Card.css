@@ -1,9 +1,10 @@
 .card-container {
   background-color: transparent;
   width: 100%;
-  height: 420px;
+  height: 450px;
   perspective: 2000px;
   cursor: pointer;
+  border-radius: 24px;
 }
 
 .card-inner {
@@ -36,18 +37,37 @@
 .card-front {
   display: flex;
   flex-direction: column;
+  z-index: 2;
+}
+
+.front-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 30px rgba(152, 73, 255, 0.3);
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.5s ease;
+  border-radius: 24px;
+}
+
+.card-container:hover .front-glow {
+  box-shadow: inset 0 0 50px rgba(152, 73, 255, 0.6), 0 0 20px rgba(152, 73, 255, 0.4);
 }
 
 .card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
-  opacity: 0.8;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0.9;
 }
 
 .card-container:hover .card-front img {
   transform: scale(1.1);
+  opacity: 1;
 }
 
 .card-front-overlay {
@@ -55,15 +75,22 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 50%;
   padding: 30px 25px;
-  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to top, rgba(18,18,18,1) 20%, rgba(18,18,18,0.8) 60%, transparent 100%);
   text-align: left;
-  transform: translateY(0);
-  transition: 0.3s;
+  display: flex;
+  align-items: flex-end;
+  z-index: 3;
 }
 
-.card-container:hover .card-front-overlay {
-  transform: translateY(100%);
+.overlay-content {
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+
+.card-container:hover .overlay-content {
+  transform: translateY(-10px);
 }
 
 .card-front-overlay h3 {
@@ -81,6 +108,11 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: inline-block;
+  background: rgba(152, 73, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(152, 73, 255, 0.3);
 }
 
 .card-back {
@@ -89,25 +121,21 @@
   align-items: center;
   justify-content: center;
   padding: 30px;
-  background: rgba(18, 18, 24, 0.98);
+  background: #18181b;
   position: relative;
+  border: 1px solid var(--primary-purple);
+  box-shadow: inset 0 0 20px rgba(152, 73, 255, 0.2);
 }
 
-.card-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle at center, rgba(152, 73, 255, 0.2) 0%, transparent 60%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.card-container:hover .card-glow {
-  opacity: 1;
+.back-glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(152, 73, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .card-back-content {
@@ -126,14 +154,16 @@
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(152, 73, 255, 0.5);
+  text-shadow: 0 0 15px rgba(152, 73, 255, 0.6);
 }
 
 .content-scroll {
   max-height: 180px;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 15px;
   margin-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-purple) rgba(255,255,255,0.05);
 }
 
 .card-back-content p {
@@ -154,12 +184,13 @@
 .content-scroll::-webkit-scrollbar-thumb {
   background: var(--primary-purple);
   border-radius: 4px;
-  box-shadow: 0 0 5px var(--primary-purple);
+  box-shadow: 0 0 10px var(--primary-purple);
 }
 
 .btn-project {
   padding: 12px 30px;
-  background: linear-gradient(45deg, var(--primary-purple), #7b2cbf);
+  background: transparent;
+  border: 2px solid var(--primary-purple);
   color: #fff;
   border-radius: 50px;
   text-decoration: none;
@@ -168,12 +199,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border: none;
-  box-shadow: 0 5px 15px rgba(152, 73, 255, 0.3);
   font-size: 1rem;
+  box-shadow: 0 0 10px rgba(152, 73, 255, 0.2);
 }
 
 .btn-project:hover {
-  transform: translateY(-3px) scale(1.05);
+  background: var(--primary-purple);
+  color: #fff;
+  transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(152, 73, 255, 0.5);
 }

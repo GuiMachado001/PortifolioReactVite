@@ -7,15 +7,18 @@ function Card(props) {
       <div className="card-inner">
         
         <div className="card-front">
+          <div className="front-glow"></div>
           <img src={props.imgCard} alt={props.nomeProjeto} />
           <div className="card-front-overlay">
-            <h3>{props.nomeProjeto}</h3>
-            <span>{props.desc1Projeto}</span>
+            <div className="overlay-content">
+                <h3>{props.nomeProjeto}</h3>
+                <span>{props.desc1Projeto}</span>
+            </div>
           </div>
         </div>
 
         <div className="card-back">
-          <div className="card-glow"></div>
+          <div className="back-glow-effect"></div>
           <div className="card-back-content">
             <h3>{props.nomeProjeto}</h3>
             <div className="content-scroll">
