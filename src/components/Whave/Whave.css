@@ -1,5 +1,45 @@
-.containerWhave{
+.neon-separator-container {
     width: 100%;
     height: auto;
+    /* background-color: #121212;  */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.neon-line {
+    width: 80%;
+    height: 3px;
+    background: #9849ff;
+    border-radius: 10px;
+    box-shadow: 
+        0 0 10px #9849ff,
+        0 0 20px #9849ff,
+        0 0 40px #9849ff;
+    animation: pulseNeon 3s infinite alternate;
+    opacity: 0.7;
+}
+
+@keyframes pulseNeon {
+    0% {
+        box-shadow: 
+            0 0 5px #9849ff,
+            0 0 10px #9849ff,
+            0 0 20px #9849ff;
+            opacity: 0.5;
+    }
+    100% {
+        box-shadow: 
+            0 0 10px #9849ff,
+            0 0 30px #9849ff,
+            0 0 60px #9849ff;
+            opacity: 0.9;
+    }
+}
+
+@media (max-width: 768px) {
+    .neon-line {
+        width: 90%;
+    }
 }

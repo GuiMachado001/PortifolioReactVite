@@ -1,131 +1,142 @@
-#contato{
-    width: 100%;
-    height: auto;
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
+:root {
+  --primary-purple: #9849ff;
+  --dark-bg: #121212;
 }
-.containerTitleContato{
+
+#contato {
   width: 100%;
-  height: 60px;
+  height: auto;
+  padding: 80px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: var(--dark-bg); */
 }
-.containerTitleContato > h1{
 
+.containerTitleContato {
+  width: 100%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.containerTitleContato > h1 {
   font-size: 50px;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgb(255, 255, 255);
+  color: white;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 600;
-
   display: flex;
-  align-self: center;
+  align-items: center;
   justify-content: center;
+  gap: 10px; 
 }
 
-.containerBoxIconsGeral{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 20px;
+.highlight {
+  color: var(--primary-purple);
+  text-shadow: 0 0 15px rgba(152, 73, 255, 0.5);
+}
+
+.containerBoxIconsGeral {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .light-button button.bt {
-    position: relative;
-    height: 200px;
-    display: flex;
-    align-items: flex-end;
-    outline: none;
-    background: none;
-    border: none;
-    cursor: pointer;
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
-  
-  .light-button button.bt .button-holder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-    width: 100px;
-    background-color: #0a0a0a;
-    border-radius: 5px;
-    color: white;
-    font-weight: 700;
-    transition: 300ms;
-    outline: #0f0f0f 2px solid;
-    outline-offset: 20;
-  }
-  
-  .light-button button.bt .button-holder svg {
-    height: 50px;
-    fill: #9849ff;
-    transition: 300ms;
-  }
-  
-  .light-button button.bt .light-holder {
-    position: absolute;
-    height: 200px;
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .light-button button.bt .light-holder .dot {
-    position: absolute;
-    top: 0;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 10px;
-    z-index: 2;
-  }
-  
-  .light-button button.bt .light-holder .light {
-    position: absolute;
-    top: 0;
-    width: 200px;
-    height: 200px;
-    clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
-    background: transparent;
-  }
-  
-  .light-button button.bt:hover .button-holder svg {
-    fill: #9849ff;
-  }
-  
-  .light-button button.bt:hover .button-holder {
-    color: #9849ff;
-    outline: #9849ff 2px solid;
-    outline-offset: 2px;
-  }
-  
-  .light-button button.bt:hover .light-holder .light {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      180deg,
-      #9849ff 0%,
-      rgba(255, 255, 255, 0) 75%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
 
+.light-button button.bt .button-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: #0a0a0a;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  transition: 300ms;
+  outline: #0f0f0f 2px solid;
+  outline-offset: 20;
+}
 
-@media (min-width: 0px) and (max-width: 650px){
-  .containerTitleContato > h1{
-    font-size: 25px;
+.light-button button.bt .button-holder svg {
+  height: 50px;
+  fill: #9849ff;
+  transition: 300ms;
+}
+
+.light-button button.bt .light-holder {
+  position: absolute;
+  height: 200px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-button button.bt .light-holder .dot {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.light-button button.bt .light-holder .light {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background: transparent;
+}
+
+.light-button button.bt:hover .button-holder svg {
+  fill: #9849ff;
+}
+
+.light-button button.bt:hover .button-holder {
+  color: #9849ff;
+  outline: #9849ff 2px solid;
+  outline-offset: 2px;
+}
+
+.light-button button.bt:hover .light-holder .light {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    #9849ff 0%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@media (min-width: 0px) and (max-width: 650px) {
+  .containerTitleContato > h1 {
+    font-size: 30px;
     text-align: center;
+    flex-direction: column; 
   }
 }
 
-@media (min-width: 651px) and (max-width: 800px){
-  .containerTitleContato > h1{
+@media (min-width: 651px) and (max-width: 800px) {
+  .containerTitleContato > h1 {
     font-size: 40px;
     text-align: center;
   }

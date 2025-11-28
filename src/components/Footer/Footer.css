@@ -1,30 +1,104 @@
-.footer {
-  background-color: #111;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  position: relative;
+:root {
+    --primary-purple: #9849ff;
+    --darker-bg: #0a0a0a; 
 }
 
-.footerContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+.main-footer {
+    background-color: var(--darker-bg);
+    color: #e0e0e0;
+    padding: 60px 0 0 0;
+    font-family: sans-serif;
 }
 
-/* RESPONSIVIDADE */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    padding: 0 20px 50px 20px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--primary-purple);
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #b0b0b0;
+    max-width: 400px;
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-purple);
+}
+
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col ul li {
+    margin-bottom: 15px;
+}
+
+.links-col ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.links-col ul li a:hover {
+    color: var(--primary-purple);
+    transform: translateX(5px);
+    text-shadow: 0 0 10px rgba(152, 73, 255, 0.4);
+}
+
+.footer-bottom {
+    background-color: #050505;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid rgba(152, 73, 255, 0.1);
+}
+
 @media (max-width: 768px) {
-  .footer {
-    font-size: 0.85rem;
-    padding: 15px;
-  }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
 
-}
+    .footer-desc {
+        margin: 0 auto;
+    }
 
-@media (max-width: 480px) {
-  .footer {
-    font-size: 0.8rem;
-    padding: 10px;
-  }
-
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
