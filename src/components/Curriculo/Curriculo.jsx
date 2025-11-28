@@ -1,117 +1,85 @@
-import './Curriculo.css'
+import React from 'react';
+import './Curriculo.css';
 import Cursos from './Cursos/Cursos';
 import Conhecimento from './Conhecimento/Conhecimento';
 
-function Curriculo(){
-    return(
-        <div id='cursos'>
+function Curriculo() {
 
-        <div className="containerTitleConhecimetos">
-            <span>Cursos e Conhecimentos</span>
-        </div>
-        
-        <div className="containerCursosConhecimento">
+    const listaCursos = [
+        { curso: "Análise e Desenvolvimento de Sistemas", escola: "Estácio", ano: "Conclusão 2024" },
+        { curso: "Técnico em Desenvolvimento de Sistemas", escola: "Senac Hub Academy (Fábrica de Software)", ano: "Cursando" },
+        { curso: "Desenvolvimento Web - Front-End", escola: "Senac Hub Academy", ano: "2023" },
+        { curso: "JavaScript Essentials 1", escola: "Cisco Networking Academy", ano: "2023" },
+        { curso: "Python Essentials 1 & 2", escola: "Cisco Networking Academy", ano: "2023" },
+        { curso: "Introdução a Ciência de Dados", escola: "Cisco Networking Academy", ano: "2023" },
+        { curso: "Front-End Completo 2.0", escola: "Danki Code", ano: "2022" },
+    ];
 
-            <div className="containerCursos"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-out">
+    return (
+        <section id='cursos'>
+            <div className="container">
+                
+                <div className="section-title">
+                    <h2>Minha <span className="highlight">Jornada</span></h2>
+                </div>
 
-                <Cursos 
-                    nomeCurso = "Análise e Desenvolvimento de Sistemas"
-                    nomeInstituicao = "Estácio - Conclusão 2024"
-                />
-                <Cursos 
-                    nomeCurso = "Técnico em desenvolvimento de Sistema (Fábrica de Software)"
-                    nomeInstituicao = "Senac Hub Academy - Líder de Sala - Cursando"
-                />
-                <Cursos 
-                    nomeCurso = "Desenvolvimento Web - Front-End"
-                    nomeInstituicao = "Senac Hub Academy"
-                />
-                <Cursos 
-                    nomeCurso = "Lógica de Programação"
-                    nomeInstituicao = "Senac Hub Academy"
-                />
-                <Cursos 
-                    nomeCurso = "JavaScript Essentials 1"
-                    nomeInstituicao = "Cisco Networking Academy"
-                />
-                <Cursos 
-                    nomeCurso = "Python Essentials 1"
-                    nomeInstituicao = "Cisco Networking Academy"
-                />
-                <Cursos 
-                    nomeCurso = "Python Essentials 1"
-                    nomeInstituicao = "Cisco Networking Academy"
-                />
-                <Cursos 
-                    nomeCurso = "Introdução a IoT e à transformação digital"
-                    nomeInstituicao = "Cisco Networking Academy"
-                />
-                <Cursos 
-                    nomeCurso = "Introdução a ciência de dados"
-                    nomeInstituicao = "Cisco Networking Academy"
-                />
-                <Cursos 
-                    nomeCurso = "Front-End Completo 2.0"
-                    nomeInstituicao = "Danki Code"
-                />
+                <div className="curriculo-grid">
+                    
+                    {/* COLUNA 1: Timeline (Mantive como estava) */}
+                    <div className="col-timeline" data-aos="fade-right">
+                        <h3 className="col-title"><i className="fa-solid fa-graduation-cap"></i> Formação</h3>
+                        
+                        <div className="timeline-box scroll-custom">
+                            {listaCursos.map((item, index) => (
+                                <Cursos 
+                                    key={index}
+                                    nomeCurso={item.curso}
+                                    nomeInstituicao={item.escola}
+                                    ano={item.ano}
+                                />
+                            ))}
+                        </div>
+                    </div>
 
+                    {/* COLUNA 2: AQUI ESTÁ A CORREÇÃO */}
+                    <div className="col-knowledge" 
+                         data-aos="fade-left"
+                         data-aos-offset="50" 
+                         data-aos-anchor-placement="top-bottom">
+                        
+                        <h3 className="col-title"><i className="fa-solid fa-code"></i> Competências</h3>
+                        
+                        <div className="knowledge-grid">
+                            <Conhecimento 
+                                title="Front-End"
+                                items={['HTML5 Semântico', 'CSS3 / SASS', 'JavaScript Moderno', 'React.js']}
+                                icons={['fa-brands fa-html5', 'fa-brands fa-css3-alt', 'fa-brands fa-square-js', 'fa-brands fa-react']}
+                            />
+                            
+                            <Conhecimento 
+                                title="Back-End"
+                                items={['Python', 'PHP', 'Integração de APIs', 'Node.js Básico']}
+                                icons={['fa-brands fa-python', 'fa-brands fa-php', 'fa-brands fa-node']}
+                            />
+                            
+                            <Conhecimento 
+                                title="Banco de Dados"
+                                items={['MySQL', 'Modelagem de Dados', 'SQL Queries']}
+                                icons={['fa-solid fa-database', 'fa-solid fa-server']}
+                            />
+
+                            <Conhecimento 
+                                title="Ferramentas & Design"
+                                items={['Git / GitHub', 'Figma (UI/UX)', 'Photoshop', 'Metodologias Ágeis']}
+                                icons={['fa-brands fa-git-alt', 'fa-brands fa-figma', 'fa-solid fa-palette']}
+                            />
+                        </div>
+                    </div>
+
+                </div>
             </div>
-
-
-            <div className="containerConhecimento">
-                <Conhecimento 
-                    TitleConhecimento = "Front-End"
-                    conhecimento1 = "- HTML"
-                    conhecimento2 = "- CSS"
-                    conhecimento3 = "- js"
-                    iconConhecimento1 = "fa-brands fa-html5 iconDescConhecimento"
-                    iconConhecimento2 = "fa-brands fa-css3-alt iconDescConhecimento"
-                    iconConhecimento3 = "fa-brands fa-square-js iconDescConhecimento"
-                />
-                <Conhecimento 
-                    TitleConhecimento = "Back-End"
-                    conhecimento1 = "- Python"
-                    conhecimento2 = "- PHP"
-                    conhecimento3 = "- MySql"
-                    iconConhecimento1 = "fa-brands fa-python iconDescConhecimento"
-                    iconConhecimento2 = "fa-brands fa-php iconDescConhecimento"
-                    iconConhecimento3 = "fa-solid fa-database iconDescConhecimento"
-                />
-                <Conhecimento 
-                    TitleConhecimento = "S.O."
-                    conhecimento1 = "- Windows"
-                    conhecimento2 = "- Linux"
-
-                    iconConhecimento1 = "fa-brands fa-windows iconDescConhecimento"
-                    iconConhecimento2 = "fa-brands fa-linux iconDescConhecimento"
-                />
-                <Conhecimento 
-                    TitleConhecimento = "Metodologias"
-                    conhecimento1 = "- Scrum"
-                    conhecimento2 = "- Kanban"
-
-                    iconConhecimento1 = "fa-solid fa-book iconDescConhecimento"
-                    iconConhecimento2 = "fa-solid fa-pen-to-square iconDescConhecimento"
-                />
-                <Conhecimento 
-                    TitleConhecimento = "Design"
-                    conhecimento1 = "- Figma"
-                    conhecimento2 = "- Photoshop"
-                    conhecimento3 = "- CorelDRAW"
-
-                    iconConhecimento1 = "fa-brands fa-figma iconDescConhecimento"
-                    iconConhecimento2 = "fa-solid iconDescConhecimento"
-                    iconConhecimento3 = "fa-solid iconDescConhecimento"
-                />
-            </div>
-
-
-        </div>
-        </div>
+        </section>
     );
 }
 
-export default Curriculo
+export default Curriculo;

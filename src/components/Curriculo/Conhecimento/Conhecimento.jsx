@@ -1,28 +1,31 @@
+import React from 'react';
 
-function Conhecimento(props){
-    return(
-                <div class="boxConhecimento"
-                data-aos="fade-left"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out">
-                    <div class="containerTitleConhecimento">
-                        <span>- {props.TitleConhecimento} -</span>
-                    </div>
-                    <div class="containerDescConhecimento">
-                        <ul>
-                            <li>{props.conhecimento1}</li>
-                            <li>{props.conhecimento2}</li>
-                            <li>{props.conhecimento3}</li>
-                        </ul>
-                    </div>
-                    <div class="iconDesc">
-                        <i className={props.iconConhecimento1}></i>
-                        <i className={props.iconConhecimento2}></i>
-                        <i className={props.iconConhecimento3}></i>
-                    </div>
-                </div>
-    )
+function Conhecimento({ title, items, icons }) {
+    return (
+        <div className="glass-card knowledge-card"
+             data-aos="fade-up"
+             data-aos-offset="50" 
+             data-aos-duration="1000">
+            
+            <div className="card-header">
+                <h3>{title}</h3>
+            </div>
+            
+            <div className="card-body">
+                <ul>
+                    {items.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <div className="card-footer">
+                {icons.map((iconClass, index) => (
+                    <i key={index} className={iconClass}></i>
+                ))}
+            </div>
+        </div>
+    );
 }
 
-
-export default Conhecimento
+export default Conhecimento;
