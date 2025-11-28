@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Header.css';
 
 function Header() {
-  // Estado para controlar a cor do header ao rolar (opcional, mas fica chique)
   const [fix, setFix] = useState(false);
 
   function setFixed() {
@@ -16,8 +15,7 @@ function Header() {
   window.addEventListener("scroll", setFixed);
 
   return (
-    // Adicionei 'fixed-top' para garantir que fique sempre no topo sobrepondo o conteudo
-    // Adicionei 'navbar-dark' para o ícone do menu ficar branco
+
     <nav className={`navbar navbar-expand-lg fixed-top custom-navbar ${fix ? 'navbar-scrolled' : ''} navbar-dark`}>
       <div className="container">
         <a className="navbar-brand fw-bold" href="#">
@@ -42,7 +40,6 @@ function Header() {
             <li className="nav-item"><a className="nav-link" href="#sobreMim">Sobre Mim</a></li>
             <li className="nav-item"><a className="nav-link" href="#cursos">Meus Cursos</a></li>
             <li className="nav-item"><a className="nav-link" href="#projeto">Projetos</a></li>
-            {/* O contato agora é um botão destacado */}
             <li className="nav-item ms-lg-3">
               <a className="nav-link btn-contact" href="#contato">Contato</a>
             </li>
