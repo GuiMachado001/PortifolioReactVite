@@ -15,11 +15,11 @@ function Header() {
   window.addEventListener("scroll", setFixed);
 
   return (
-
     <nav className={`navbar navbar-expand-lg fixed-top custom-navbar ${fix ? 'navbar-scrolled' : ''} navbar-dark`}>
       <div className="container">
-        <a className="navbar-brand fw-bold" href="#">
-          Guilherme <span className="text-primary-color">Machado</span>
+        
+        <a className="navbar-brand" href="#home">
+          <img src="/img/fotos/logo.png" alt="Logo GM" className="logo-header" />
         </a>
         
         <button
