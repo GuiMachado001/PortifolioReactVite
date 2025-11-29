@@ -37,7 +37,6 @@
   text-shadow: 0 0 20px rgba(152, 73, 255, 0.4);
 }
 
-/* --- GRID BENTO (Layout Mágico) --- */
 .bento-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr; /* 3 colunas */

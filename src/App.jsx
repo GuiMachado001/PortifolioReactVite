@@ -12,6 +12,7 @@ import SobreMim from './components/SobreMim/SobreMim';
 import Parallax from './components/Parallax/Parallax';
 import Curriculo from './components/Curriculo/Curriculo';
 import Projeto from './components/Projetos/Projetos';
+import Achievements from './components/Achievements/Achievements';
 import Social from './components/Social/Social';
 import Whave from './components/Whave/Whave';
 import Footer from './components/Footer/Footer';
@@ -59,6 +60,7 @@ function App() {
       <Parallax />
       <Curriculo />
       <Projeto />
+      <Achievements />
       <Social />
       <Whave />
       <Footer />

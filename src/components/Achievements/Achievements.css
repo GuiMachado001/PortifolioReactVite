@@ -1,0 +1,203 @@
+:root {
+    --primary-purple: #9849ff;
+    --dark-bg: #121212;
+}
+
+#conquistas {
+    width: 100%;
+    padding: 100px 0;
+    background-color: var(--dark-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.container-achievements {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title-achievement {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.title-achievement h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.title-achievement p {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title-achievement .highlight {
+    color: var(--primary-purple);
+    text-shadow: 0 0 25px rgba(152, 73, 255, 0.6);
+}
+
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    height: 420px; /* Altura fixa para todos os cards */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(152, 73, 255, 0.2);
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0.8;
+}
+
+.achievement-card:hover .card-image img {
+    transform: scale(1.1);
+    opacity: 0.4;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(18, 18, 18, 0.4) 50%,
+        rgba(18, 18, 18, 1) 100%
+    );
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    color: #fff;
+    transform: translateY(100px); /* Esconde parte do conteúdo inicialmente */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.achievement-card:hover .card-content {
+    transform: translateY(0);
+}
+
+.icon-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-purple);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px var(--primary-purple);
+}
+
+.card-info h4 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: #d1d1d1;
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita o texto a 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(152, 73, 255, 0.2);
+    border-radius: 15px;
+    pointer-events: none;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    z-index: 3;
+}
+
+.achievement-card:hover .card-border {
+    border-color: var(--primary-purple);
+    box-shadow: inset 0 0 20px rgba(152, 73, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    #conquistas {
+        padding: 60px 0;
+    }
+    
+    .title-achievement h2 {
+        font-size: 2.2rem;
+    }
+
+    .achievement-card {
+        height: auto;
+        min-height: 380px;
+    }
+
+    .card-content {
+        transform: translateY(0); /* Remove o efeito de slide no mobile */
+        background: rgba(18, 18, 18, 0.8); /* Fundo semi-transparente para legibilidade */
+        backdrop-filter: blur(8px);
+    }
+    
+    .achievement-card:hover .card-image img {
+        opacity: 0.6; /* Menos opacidade no hover para mobile */
+    }
+}

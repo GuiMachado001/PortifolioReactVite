@@ -67,8 +67,7 @@ function Social() {
   return (
     <div id="contato">
       <div className="containerTitleContato" data-aos="fade-down">
-        {/* Aqui está o título modernizado que eu criei */}
-        <h1>Vamos <span className="highlight">Conversar?</span></h1>
+        <h2>Vamos <span className="highlight">Conversar?</span></h2>
       </div>
 
       <div className="containerBoxIconsGeral">
