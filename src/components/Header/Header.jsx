@@ -66,6 +66,9 @@ function Header() {
             <li className="nav-item">
                 <a className={`nav-link ${activeSection === 'projeto' ? 'active' : ''}`} href="#projeto">Projetos</a>
             </li>
+            <li className="nav-item">
+                <a className={`nav-link ${activeSection === 'conquistas' ? 'active' : ''}`} href="#conquistas">Conquistas</a>
+            </li>
             <li className="nav-item ms-lg-3">
               <a className={`nav-link btn-contact ${activeSection === 'contato' ? 'active-btn' : ''}`} href="#contato">Contato</a>
             </li>

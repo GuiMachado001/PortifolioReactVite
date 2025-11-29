@@ -32,6 +32,7 @@ function Footer() {
                 <li><a href="#sobreMim">Sobre Mim</a></li>
                 <li><a href="#cursos">Formação</a></li>
                 <li><a href="#projeto">Projetos</a></li>
+                <li><a href="#conquistas">Conquistas</a></li>
             </ul>
         </div>
 
