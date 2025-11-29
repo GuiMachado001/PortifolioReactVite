@@ -6,6 +6,20 @@ function Projeto() {
 
     const listaProjetos = [
         {
+            nome: "Nexuzz",
+            img: "/img/projetos/Nexuzz.png", 
+            descCurta: "Chat Real-time com Firebase, Auth Social e Gestão de Amigos.",
+            descLonga: "Chat em tempo real desenvolvido com React.js e arquitetura Serverless (Firebase). Implementa autenticação OAuth 2.0 (Google), banco de dados NoSQL (Firestore) para sincronização de mensagens via WebSockets e gerenciamento de estado complexo para controlar listas de amigos e notificações de solicitações pendentes.",
+            link: "https://nexuzz.netlify.app/login"
+        },
+        {
+            nome: "Dashboard Crypto",
+            img: "/img/projetos/CryptoDashboard.png", 
+            descCurta: "React, APIs e Gráficos",
+            descLonga: "Aplicação financeira profissional que consome a API da CoinGecko em tempo real. Conta com gráficos interativos (Recharts), paginação server-side, sistema de busca e modais de detalhes. Foco total em visualização de dados e performance.",
+            link: "https://github.com/Guilherme-Machado01/crypto-dashboard" 
+        },
+        {
             nome: "Agente 360",
             img: "/img/projetos/Agente360.png",
             descCurta: "Parceria Senac, FESPMS e Governo MS",

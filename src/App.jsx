@@ -20,7 +20,6 @@ function App() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
-  // ESTADO PARA CONTROLAR O INÍCIO DA ANIMAÇÃO
   const [loading, setLoading] = useState(true);
 
   const [hasMouse, setHasMouse] = useState(true);
@@ -29,22 +28,10 @@ function App() {
   useEffect(() => {
     AOS.init({ once: true, offset: 100 });
     
-    const handleMouseMove = (e) => {
-      mouseX.set(e.clientX - 15);
-      mouseY.set(e.clientY - 15);
-    };
-
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-    setHasMouse(!isTouch);
-
-    if (!isTouch) {
-      window.addEventListener("mousemove", handleMouseMove);
-    }
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [mouseX, mouseY]);
+  },);
 
   return (
     <>
@@ -63,7 +50,7 @@ function App() {
       />
 
       <Header />
-      <Stars />
+      {/* <Stars /> */}
       
 
       <Home startAnimation={!loading} />

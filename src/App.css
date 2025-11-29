@@ -1,12 +1,4 @@
-@media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
 
-/* --- App.css / index.css --- */
-
-/* Definição das Variáveis Globais */
 :root {
   --primary-purple: #9849ff;
   --dark-bg: #121212;
@@ -16,7 +8,6 @@
   --text-gray: #b0b0b0;
 }
 
-/* Resets e Configurações Globais */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,14 +17,13 @@
 html, body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* IMPORTANTE: Previne scroll lateral das estrelas */
+  overflow-x: hidden; 
   background-color: var(--dark-bg);
   color: var(--text-white);
-  font-family: 'Poppins', sans-serif; /* Sugestão de fonte moderna */
+  font-family: 'Poppins', sans-serif; 
   scroll-behavior: smooth;
 }
 
-/* Estilo da Barra de Rolagem (Scrollbar) */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -51,26 +41,7 @@ html, body {
   background: #7b2cbf; 
 }
 
-/* Cursor Customizado (Oculta o padrão apenas se tiver mouse) */
-@media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
-.cursor {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #9849ff;
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; 
-  mix-blend-mode: difference; 
-  z-index: 9999; 
-  background-color: rgba(152, 73, 255, 0.1); 
-  backdrop-filter: blur(1px);
-}
+
 
 .scroll-progress {
   position: fixed;
