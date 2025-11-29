@@ -138,7 +138,7 @@
 }
 
 @media (min-width: 0px) and (max-width: 650px) {
-  .containerTitleContato > h1 {
+  .containerTitleContato > h2 {
     font-size: 30px;
     text-align: center;
     flex-direction: column; 
@@ -152,7 +152,7 @@
 }
 
 @media (min-width: 651px) and (max-width: 800px) {
-  .containerTitleContato > h1 {
+  .containerTitleContato > h2 {
     font-size: 40px;
     text-align: center;
   }

@@ -12,7 +12,7 @@
 }
 
 .container-achievements {
-    width: 90%;
+    width: 92%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -43,7 +43,6 @@
     text-shadow: 0 0 25px rgba(152, 73, 255, 0.6);
 }
 
-
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -55,17 +54,12 @@
     border-radius: 15px;
     position: relative;
     overflow: hidden;
-    height: 420px; /* Altura fixa para todos os cards */
+    height: 420px;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
-
-.achievement-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(152, 73, 255, 0.2);
 }
 
 .card-image {
@@ -82,11 +76,6 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    opacity: 0.8;
-}
-
-.achievement-card:hover .card-image img {
-    transform: scale(1.1);
     opacity: 0.4;
 }
 
@@ -99,7 +88,7 @@
     background: linear-gradient(
         to bottom,
         transparent 0%,
-        rgba(18, 18, 18, 0.4) 50%,
+        rgba(18, 18, 18, 0.6) 50%,
         rgba(18, 18, 18, 1) 100%
     );
     z-index: 1;
@@ -110,12 +99,11 @@
     z-index: 2;
     padding: 25px;
     color: #fff;
-    transform: translateY(100px); /* Esconde parte do conteúdo inicialmente */
+    /* REMOVIDO: transform: translateY(100px); */
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.achievement-card:hover .card-content {
-    transform: translateY(0);
+    /* Garante legibilidade em mobile, mesmo com opacidade da imagem */
+    background: linear-gradient(to bottom, transparent 0%, rgba(18, 18, 18, 0.95) 100%);
+    padding-top: 100px; 
 }
 
 .icon-wrapper {
@@ -154,7 +142,7 @@
     line-height: 1.6;
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limita o texto a 3 linhas */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -172,9 +160,40 @@
     z-index: 3;
 }
 
-.achievement-card:hover .card-border {
-    border-color: var(--primary-purple);
-    box-shadow: inset 0 0 20px rgba(152, 73, 255, 0.4);
+/* EFEITOS DE HOVER (APENAS PARA DISPOSITIVOS COM MOUSE) */
+@media (hover: hover) and (pointer: fine) {
+    .card-content {
+        transform: translateY(100px); /* Oculta o conteúdo por padrão em desktop */
+        background: linear-gradient(to bottom, transparent 0%, rgba(18, 18, 18, 1) 100%);
+        padding-top: 25px;
+    }
+    
+    .achievement-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(152, 73, 255, 0.2);
+    }
+    
+    .achievement-card:hover .card-image img {
+        transform: scale(1.1);
+        opacity: 0.2; /* Aumenta o escurecimento ao hover */
+    }
+
+    .achievement-card:hover .card-content {
+        transform: translateY(0); /* Mostra o conteúdo ao hover */
+    }
+    
+    .achievement-card:hover .card-border {
+        border-color: var(--primary-purple);
+        box-shadow: inset 0 0 20px rgba(152, 73, 255, 0.4);
+    }
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS MENORES */
+
+@media (max-width: 1024px) {
+    .achievement-grid {
+        gap: 25px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -185,19 +204,62 @@
     .title-achievement h2 {
         font-size: 2.2rem;
     }
-
+    
     .achievement-card {
         height: auto;
         min-height: 380px;
-    }
-
-    .card-content {
-        transform: translateY(0); /* Remove o efeito de slide no mobile */
-        background: rgba(18, 18, 18, 0.8); /* Fundo semi-transparente para legibilidade */
-        backdrop-filter: blur(8px);
+        /* Em telas menores, o conteúdo fica fixo, não precisa de flex-end */
+        justify-content: flex-start;
     }
     
-    .achievement-card:hover .card-image img {
-        opacity: 0.6; /* Menos opacidade no hover para mobile */
+    .card-content {
+        padding: 20px;
+        padding-top: 80px; /* Ajuste para o conteúdo */
+    }
+
+    .card-image img {
+        opacity: 0.4; /* Garante que a imagem está escura o suficiente por padrão */
+    }
+}
+
+@media (max-width: 576px) {
+    .container-achievements {
+        width: 90%;
+    }
+    
+    .achievement-grid {
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+    
+    .title-achievement h2 {
+        font-size: 1.8rem;
+    }
+    
+    .title-achievement p {
+        font-size: 1rem;
+    }
+    
+    .achievement-card {
+        min-height: 350px;
+    }
+    
+    .card-info h4 {
+        font-size: 1.2rem;
+    }
+    
+    .card-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+    }
+    
+    .icon-wrapper {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
     }
 }
