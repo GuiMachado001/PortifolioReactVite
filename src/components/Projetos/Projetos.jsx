@@ -17,7 +17,7 @@ function Projeto() {
             img: "/img/projetos/CryptoDashboard.png", 
             descCurta: "React, APIs e Gráficos",
             descLonga: "Aplicação financeira profissional que consome a API da CoinGecko em tempo real. Conta com gráficos interativos (Recharts), paginação server-side, sistema de busca e modais de detalhes. Foco total em visualização de dados e performance.",
-            link: "https://github.com/Guilherme-Machado01/crypto-dashboard" 
+            link: "https://dashcoindashboard.netlify.app/" 
         },
         {
             nome: "Agente 360",
