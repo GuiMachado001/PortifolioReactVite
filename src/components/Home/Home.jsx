@@ -56,7 +56,7 @@ function Home({ startAnimation }) {
             </div>
             
             <div className="developer-img-wrapper">
-              <img src="/img/fotos/avatar1.png" alt="Foto Guilherme" />
+              <img src="/img/fotos/eu.png" alt="Foto Guilherme" />
             </div>
           </div>
         </div>
