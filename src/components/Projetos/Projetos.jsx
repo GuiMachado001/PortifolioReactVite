@@ -3,6 +3,13 @@ import './Projeto.css';
 import Card from './Card/Card';
 
 function Projeto() {
+    let iconGitHub = 'fa-brands fa-github';
+    let iconInternet = 'fa-solid fa-globe';
+
+    let site = 'Ver Site';
+    let gitHub = 'Ver GitHub'
+    
+    
 
     const listaProjetos = [
         {
@@ -10,21 +17,27 @@ function Projeto() {
             img: "/img/projetos/Nexuzz.png", 
             descCurta: "Chat Real-time com Firebase, Auth Social e Gestão de Amigos.",
             descLonga: "Chat em tempo real desenvolvido com React.js e arquitetura Serverless (Firebase). Implementa autenticação OAuth 2.0 (Google), banco de dados NoSQL (Firestore) para sincronização de mensagens via WebSockets e gerenciamento de estado complexo para controlar listas de amigos e notificações de solicitações pendentes.",
-            link: "https://nexuzz.netlify.app/login"
+            link: "https://nexuzz.netlify.app/login",
+            btn: site,
+            icon: iconInternet
         },
         {
             nome: "Dashboard Crypto",
             img: "/img/projetos/CryptoDashboard.png", 
             descCurta: "React, APIs e Gráficos",
             descLonga: "Aplicação financeira profissional que consome a API da CoinGecko em tempo real. Conta com gráficos interativos (Recharts), paginação server-side, sistema de busca e modais de detalhes. Foco total em visualização de dados e performance.",
-            link: "https://dashcoindashboard.netlify.app/" 
+            link: "https://dashcoindashboard.netlify.app/",
+            btn: site,
+            icon: iconInternet
         },
         {
             nome: "Agente 360",
             img: "/img/projetos/Agente360.png",
             descCurta: "Parceria Senac, FESPMS e Governo MS",
             descLonga: "O Agente 360 foi uma parceria entre a FESPMS, o Senac e o Governo de Mato Grosso do Sul. O objetivo foi criar um jogo em realidade virtual e web onde o jogador atua como agente de saúde combatendo a dengue. Inclui sistema de ranking escolar e gamificação.",
-            link: ""
+            link: "https://fespms.com/WebSite/public/",
+            btn: site,
+            icon: iconInternet
         },
         {
             nome: "PassControl",
@@ -38,14 +51,18 @@ function Projeto() {
             img: "/img/projetos/FeiraBosqueDaPaz.png",
             descCurta: "Plataforma de Gestão de Eventos",
             descLonga: "Plataforma online completa para gerenciamento da Feira Bosque da Paz. Permite cadastro de expositores, artistas e atrações. Conta com área administrativa robusta e vitrine virtual para produtos regionais e economia criativa.",
-            link: ""
+            link: "https://feirabosquedapaz.com.br/app/Views/Client/",
+            btn: site,
+            icon: iconInternet
         },
         {
             nome: "Portfólio VideoMaker",
             img: "/img/projetos/PortifolioVideomaker.png",
             descCurta: "Showcase Audiovisual",
             descLonga: "Site moderno e responsivo, desenvolvido com foco em performance e visual impactante para apresentar o portfólio de um profissional de vídeo. Design minimalista que prioriza o conteúdo visual.",
-            link: "https://github.com/Guilherme-Machado01/Projeto-Netflix"
+            link: "https://gustavosaab.netlify.app/",
+            btn: site,
+            icon: iconInternet
         },
         {
             nome: "Meu Portfólio",
@@ -59,7 +76,9 @@ function Projeto() {
             img: "/img/projetos/ProjetoGodOfWar.png",
             descCurta: "Landing Page Temática",
             descLonga: "Projeto desafio pessoal focado em UI Design e CSS avançado. Uma Landing Page temática do jogo God of War, explorando efeitos de parallax, transições complexas e tipografia imersiva.",
-            link: "https://github.com/Guilherme-Machado01/ProjetoGodOfWar"
+            link: "https://github.com/Guilherme-Machado01/ProjetoGodOfWar",
+            btn: gitHub,
+            icon: iconGitHub,
         }
     ];
 
@@ -79,6 +98,8 @@ function Projeto() {
                             desc1Projeto={item.descCurta}
                             desc2Projeto={item.descLonga}
                             gitHubProjeto={item.link}
+                            icon={item.icon}
+                            btn={item.btn}
                         />
                     ))}
                 </div>

@@ -26,7 +26,7 @@ function Card(props) {
             </div>
             {props.gitHubProjeto && (
               <a href={props.gitHubProjeto} target="_blank" rel="noopener noreferrer" className="btn-project">
-                Ver Projeto <i className="fa-brands fa-github"></i>
+                {props.btn} <i className={props.icon}></i>
               </a>
             )}
           </div>
