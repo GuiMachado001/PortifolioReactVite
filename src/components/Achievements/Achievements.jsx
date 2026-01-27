@@ -1,5 +1,6 @@
 import React from 'react';
 import './Achievements.css';
+import { a, link } from 'framer-motion/client';
 
 function Achievements() {
     const listaConquistas = [
@@ -8,14 +9,16 @@ function Achievements() {
             icon: "fa-solid fa-trophy",
             title: "Moção de Congratulação",
             subtitle: "Câmara Municipal de Campo Grande",
-            description: "Reconhecimento oficial pelo impacto social e inovação das soluções desenvolvidas na Fábrica de Software."
+            description: "Reconhecimento oficial pelo impacto social e inovação das soluções desenvolvidas na Fábrica de Software.",
+            link: 'https://ms.senac.br/senac/noticias/v/game-agente-360-recebe-mocao-de-congratulacao-na-camara-municipal'
         },
         {
             image: "/img/Achievements/Reportagem.png",
             icon: "fa-solid fa-newspaper",
             title: "Destaque na Mídia Local",
             subtitle: "Jornais e Portais de Notícias",
-            description: "Cobertura da imprensa sobre os projetos desenvolvidos durante o estágio e o sucesso da nossa metodologia de trabalho."
+            description: "Cobertura da imprensa sobre os projetos desenvolvidos durante o estágio e o sucesso da nossa metodologia de trabalho.",
+            link: 'https://www.diariodigital.com.br/geral/senac-ms-lanca-jogo-em-realidade-virtual-para-conscientizar-sobre-a-dengue'
         },
         {
             image: "/img/Achievements/FabricaDeSoftware.jpeg",
@@ -43,6 +46,7 @@ function Achievements() {
                 
                 <div className="achievement-grid">
                     {listaConquistas.map((item, index) => (
+                        <a href={item.link} target='_blank'>
                         <div className="achievement-card" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="card-image">
                                 <img src={item.image} alt={item.title} />
@@ -60,6 +64,7 @@ function Achievements() {
                             </div>
                             <div className="card-border"></div>
                         </div>
+                    </a>
                     ))}
                 </div>
             </div>
