@@ -35,7 +35,7 @@ function Projeto() {
             img: "/img/projetos/Agente360.png",
             descCurta: "Parceria Senac, FESPMS e Governo MS",
             descLonga: "O Agente 360 foi uma parceria entre a FESPMS, o Senac e o Governo de Mato Grosso do Sul. O objetivo foi criar um jogo em realidade virtual e web onde o jogador atua como agente de saúde combatendo a dengue. Inclui sistema de ranking escolar e gamificação.",
-            link: "https://fespms.com/WebSite/public/",
+            link: "https://fespms.com/website/public/",
             btn: site,
             icon: iconInternet
         },
